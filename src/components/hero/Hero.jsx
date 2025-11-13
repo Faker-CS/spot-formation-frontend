@@ -7,24 +7,18 @@ import { H6 } from '../common/Typography/Typography'
 
 function Hero() {
 	return (
+	<>
+	
 		<section className="hero">
+			<Navbar />
 			<img
 				className="hero__bg"
-				src="/assets/images/Hero-bg-1024.png"
+				src="/assets/images/hero-bg.png"
 				alt=""
 			/>
 			<div className="hero__overlay" />
-			<header className="hero__top">
-				<div className="hero__support">
-					<span>Vous avez une question ?</span>
-					<span>(de 8h à 18h)</span>
-					<span className="hero__support-phone">+33 6 00 00 00 00</span>
-				</div>
-			</header>
+					
 
-			<div className="hero__nav">
-					<Navbar />
-			</div>
 
 			<div className="hero__content">
 				<H1>
@@ -67,6 +61,7 @@ function Hero() {
 				</div>
 			</footer>
 		</section>
+	</>
 	)
 }
 

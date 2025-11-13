@@ -1,37 +1,133 @@
 /* Import the Red Hat Display font from Google Fonts, including italics */
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap");
 
 /* Import the Lato font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 
 :root {
-  --typo-font: 'Red Hat Display', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  --typo-lato: 'Lato', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --typo-font: "Red Hat Display", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  --typo-lato: "Lato", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
   /* 2% letter spacing interpreted as 0.02em (2% of 1em) */
   --typo-letter-spacing: 0.02em;
 }
 
-.typo { font-family: var(--typo-font); letter-spacing: var(--typo-letter-spacing); margin: 0; }
+.typo {
+  font-family: var(--typo-font);
+  letter-spacing: var(--typo-letter-spacing);
+  margin: 0;
+}
 
-.typo--hh { font-style: italic; font-weight: 400; font-size: 80px; line-height: 84px; }
-.typo--h1 { font-weight: 400; font-size: 60px; line-height: 100px; }
-.typo--h2 { font-weight: 300; font-size: 60px; line-height: 76px; }
-.typo--h3 { font-weight: 600; font-size: 58px; line-height: normal; }
-.typo--gt { font-weight: 600; font-size: 58px; line-height: normal; }
-.typo--h4 { font-weight: 300; font-size: 40px; line-height: 100px; }
-.typo--h5 { font-weight: 300; font-size: 30px; line-height: normal; }
-.typo--h6 { font-family: var(--typo-lato); font-weight: 400; font-size: 20px; line-height: 30px; }
-.typo--m-h3 { font-weight: 600; font-size: 28px; line-height: normal; }
-.typo--m-h1 { font-weight: 400; font-size: 30px; line-height: 37px; }
-.typo--m-h7 { font-weight: 400; font-size: 20px; line-height: normal; }
-.typo--p { font-weight: 400; font-size: 18px; line-height: 20px; }
-.typo--btn-cta { font-family: var(--typo-lato); font-weight: 900; font-size: 16px; line-height: 24px; }
-.typo--btn-menu { font-family: var(--typo-lato); font-weight: 400; font-size: 12px; line-height: normal; }
-.typo--m-btn-menu { font-family: var(--typo-lato); font-weight: 400; font-size: 8px; line-height: normal; }
-.typo--b-8 { font-weight: 400; font-size: 8px; line-height: normal; }
+.typo--hh {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 84px;
+}
+.typo--h1 {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 100px;
+}
+.typo--h2 {
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 76px;
+}
+.typo--h3 {
+  font-weight: 600;
+  font-size: 58px;
+  line-height: normal;
+}
+.typo--gt {
+  font-weight: 600;
+  font-size: 58px;
+  line-height: normal;
+}
+.typo--h4 {
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 100px;
+}
+.typo--h5 {
+  font-weight: 300;
+  font-size: 30px;
+  line-height: normal;
+}
+.typo--h6 {
+  font-family: var(--typo-lato);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+.typo--m-h3 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: normal;
+}
+.typo--m-h1 {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 37px;
+}
+.typo--m-h7 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: normal;
+}
+.typo--p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+}
+.typo--p2 {
+  font-family: var(--typo-lato);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+}
+.typo--p3 {
+  font-family: var(--typo-lato);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: Auto;
+}
+.typo--btn-cta {
+  font-family: var(--typo-lato);
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 24px;
+}
+.typo--btn-menu {
+  font-family: var(--typo-lato);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: normal;
+}
+.typo--m-btn-menu {
+  font-family: var(--typo-lato);
+  font-weight: 400;
+  font-size: 8px;
+  line-height: normal;
+}
+.typo--b-8 {
+  font-weight: 400;
+  font-size: 8px;
+  line-height: normal;
+}
 
 @media (max-width: 800px) {
-  .typo--h1 { font-size: 30px; line-height: 37px; }
-  .typo--h2 { font-size: 22px; line-height: normal; }
-  .typo--h3 { font-size: 28px; line-height: normal; }
+  .typo--h1 {
+    font-size: 30px;
+    line-height: 37px;
+  }
+  .typo--h2 {
+    font-size: 22px;
+    line-height: normal;
+  }
+  .typo--h3 {
+    font-size: 28px;
+    line-height: normal;
+  }
 }

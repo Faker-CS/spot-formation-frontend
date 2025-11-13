@@ -1,0 +1,124 @@
+/*
+  Global design tokens (colors & effects)
+  - Place your canonical colors and effect tokens here.
+  - If you have exact hex / gradient stops from Figma, replace the placeholder values.
+  - Import this file at the app root (e.g. in src/index.css or index.html) so variables are available everywhere.
+*/
+
+:root {
+  /* Colors (from Figma palette screenshot) */
+  --color-black-1d: #1d1d1d; /* Black 1D */
+  --color-dark-bleu: #1B365E; /* Dark Bleu */
+  --color-red-rose: #FF5757; /* Red rose */
+  --color-yellow: #FFBC42; /* Yellow */
+  --color-orange-start: #FFBC41; /* Orange gradient start */
+  --color-orange-end: #FF5758; /* Orange gradient end */
+  --color-green: #B6C93E; /* Green */
+  --color-light-bleu: #40BFDE; /* Light Bleu */
+  --color-fiiusha: #A36490; /* Fiiusha (fuchsia-like) */
+  --color-dark-green: #1B515E; /* Dark Green */
+
+  /* Background tokens */
+  --bg-light-bleu: #C7F8FF; /* Backgd Light Bleu */
+  --bg-light-yellow: #FFE4B4; /* Bkgd light Yellow */
+  --bg-light-gray-01: #D9D9D9; /* Bkgd light Gray 01 */
+
+  /* Grays */
+  --gray-1-ab: #ABABAB; /* Gray 1 AB */
+  --text-default: #0b2b3a;
+  --text-on-dark: #ffffff;
+
+  /* Gradients */
+  --gradient-orange: linear-gradient(90deg, var(--color-orange-start), var(--color-orange-end));
+
+  /* Effects / Elevation */
+  --shadow-xs: 0 1px 2px rgba(4, 9, 20, 0.06);
+  --shadow-sm: 0 6px 18px rgba(4, 9, 20, 0.08);
+  --shadow-md: 0 12px 36px rgba(4, 9, 20, 0.12);
+  --shadow-lg: 0 24px 64px rgba(4, 9, 20, 0.18);
+
+  /* Soft glows often used for hero badges */
+  --glow-primary: 0 8px 28px rgba(255, 106, 0, 0.14);
+
+  /* Borders & radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 4px rgba(255, 177, 80, 0.14);
+
+  /* Animation timing */
+  --timing-fast: 120ms;
+  --timing-medium: 220ms;
+  --timing-slow: 360ms;
+}
+
+/* Example utility classes using tokens - optional convenience selectors */
+.u-bg-orange {
+  background: var(--gradient-orange);
+}
+
+.u-shadow-soft { box-shadow: var(--shadow-sm); }
+.u-shadow-md { box-shadow: var(--shadow-md); }
+
+.u-radius-md { border-radius: var(--radius-md); }
+
+/* Example: a reusable badge style used in hero */
+.badge-hero {
+  background: rgba(8, 36, 53, 0.85);
+  color: var(--text-on-dark);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--glow-primary);
+}
+
+/* ---------- Effect styles exported from Figma ---------- */
+/* These map the Figma effect styles you shared into CSS tokens + helpers.
+   - Shadow over 01: subtle drop shadow for small elevated UI pieces
+   - Encart: slightly stronger card shadow used for floating cards/encarts
+   - Blur Bckd 01: background blur (backdrop-filter) used for translucent overlays
+*/
+
+/* Shadow tokens */
+:root {
+  --effect-shadow-over-01: 0 4px 10px rgba(3, 9, 22, 0.06);
+  --effect-encart-shadow: 0 12px 30px rgba(3, 9, 22, 0.10);
+}
+
+/* Utility classes to apply the effects */
+.effect-shadow-over-01 { box-shadow: var(--effect-shadow-over-01); }
+.effect-encart { box-shadow: var(--effect-encart-shadow); }
+
+/* Blur background / backdrop token
+   Note: backdrop-filter has limited support in older browsers; keep a semi-opaque
+   fallback background-color for those.
+*/
+:root {
+  --effect-blur-bckd-01-bg: rgba(255,255,255,0.06);
+  --effect-blur-bckd-01-backdrop: blur(8px);
+}
+
+.effect-blur-bckd-01 {
+  background-color: var(--effect-blur-bckd-01-bg);
+  -webkit-backdrop-filter: var(--effect-blur-bckd-01-backdrop);
+  backdrop-filter: var(--effect-blur-bckd-01-backdrop);
+  /* Slight border to match soft glass effect */
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Example combined card style used for the rating badge */
+.card-encart {
+  background: rgba(255,255,255,0.02);
+  color: var(--text-on-dark);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--effect-encart-shadow);
+}
+
+/* Note on exact values:
+   - These colors are reasonable approximations based on the screenshot you provided.
+   - For pixel-perfect output, paste the exact hex/rgba stops from Figma into the variables above.
+   - If you want runtime tokens (JS theme object), I can also generate a small JS export from this file.
+*/

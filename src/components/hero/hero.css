@@ -20,8 +20,10 @@
 .hero__overlay {
 	position: absolute;
 	inset: 0;
-	background: radial-gradient(120% 120% at 80% 20%, rgba(255, 124, 64, 0.25) 0%, rgba(255, 124, 64, 0) 50%),
-		linear-gradient(180deg, rgba(7, 20, 35, 0.2) 0%, rgba(7, 20, 35, 0.75) 60%, rgba(7, 20, 35, 0.95) 100%);
+	background-image: url('/assets/images/hero-bg-1024.png'); 
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	pointer-events: none;
 }
 

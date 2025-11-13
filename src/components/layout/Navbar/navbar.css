@@ -1,3 +1,5 @@
+@import '../../../styles/variables.css';
+
 .navbar {
   display: flex;
   align-items: center;
@@ -5,10 +7,9 @@
   gap: 16px;
   padding: 12px 24px;
 }
-.navbar__brand img { height: 36px; display:block }
 .navbar__menu { display:flex; gap:12px; align-items:center; }
-.navbar__menu a { color: #ffffff; text-decoration:none; padding:8px 12px; border-radius:999px; font-weight:600; background: rgba(255,255,255,0.06); }
-.navbar__menu a:hover { background: rgba(255,255,255,0.10); }
+.navbar__menu a { color:var(--color-dark-bleu); text-decoration:none; padding:8px 12px; border-radius:999px; font-weight:600; background: white; }
+.navbar__menu a:hover { background: rgba(255, 255, 255, 0.1); }
 .navbar__actions { display:flex; gap:12px; align-items:center }
 .navbar__contact { padding:8px 14px }
 .navbar__icon { background:transparent; border:none; padding:6px; border-radius:8px }
