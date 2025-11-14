@@ -28,7 +28,14 @@
 .typo--h1 {
   font-weight: 400;
   font-size: 60px;
-  line-height: 100px;
+  line-height: 79px;
+  font-style: normal;
+  color: #ffffff;
+  position: absolute;
+  left: 2.36%;
+  right: 47.64%;
+  top: 15.71%;
+  bottom: 70.18%;
 }
 .typo--h2 {
   font-weight: 300;
@@ -57,9 +64,16 @@
 }
 .typo--h6 {
   font-family: var(--typo-lato);
-  font-weight: 400;
+  font-style: normal;
+  font-weight: 500;
   font-size: 20px;
   line-height: 30px;
+  color: #ffffff;
+  position: absolute;
+  left: 2.64%;
+  right: 50.21%;
+  top: 45.36%;
+  bottom: 43.39%;
 }
 .typo--m-h3 {
   font-weight: 600;
@@ -77,9 +91,16 @@
   line-height: normal;
 }
 .typo--p {
+  font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 26px;
+  color: #ffffff;
+  position: absolute;
+  left: 2.64%;
+  right: 48.54%;
+  top: 60.18%;
+  bottom: 25.89%;
 }
 .typo--p2 {
   font-family: var(--typo-lato);
@@ -101,9 +122,11 @@
 }
 .typo--btn-menu {
   font-family: var(--typo-lato);
-  font-weight: 400;
+  font-weight: 63px;
+  height: 14px;
+  font-style: normal;
   font-size: 12px;
-  line-height: normal;
+  line-height: 14px;
 }
 .typo--m-btn-menu {
   font-family: var(--typo-lato);

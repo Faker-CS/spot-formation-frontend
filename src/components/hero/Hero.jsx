@@ -1,70 +1,70 @@
-import React from 'react'
-import './hero.css'
-import Navbar from '../layout/Navbar/Navbar'
-import Button from '../common/Button'
-import { H1, P } from '../common/Typography'
-import { H6 } from '../common/Typography/Typography'
+import React from "react";
+import "./hero.css";
+import Navbar from "../layout/Navbar/Navbar";
+import { H1, P } from "../common/Typography";
+import { H6 } from "../common/Typography/Typography";
+import Button from "../common/Button";
+import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
 
 function Hero() {
-	return (
-	<>
-	
-		<section className="hero">
-			<Navbar />
-			<img
-				className="hero__bg"
-				src="/assets/images/hero-bg.png"
-				alt=""
-			/>
-			<div className="hero__overlay" />
-					
+  return (
+    <section className="hero__background">
+      {/* Navbar */}
+      <Navbar />
 
+      {/* Main Content */}
+      {/* <div className="hero__content"> */}
+      <H1 className="">
+        Réussir, c'est notre métier. Le vôtre ?
+      </H1>
+      <Stack sx={{ height: 10 }} spacing={1} >
+        <H6 >
+          Formez-vous, osez, réussissez !
+          Nous avons ce qu'il vous faut pour dévoiler votre vrai potentiel.
+        </H6>
+      </Stack>
+      <P>
+        Développez vos projets grâce à nos solutions de formation et
+        d'accompagnement sur mesure.
 
-			<div className="hero__content">
-				<H1>
-					Réussir, c&apos;est notre métier.<br/>
-					Le vôtre ?
-				</H1>
-				<H6 className="hero__lead">
-					Formez-vous, osez, réussissez ! Nous avons ce qu’il vous faut pour
-					dévoiler votre vrai potentiel.
-				</H6>
-				<P className="hero__description">
-					Développez vos projets grâce à nos solutions de formation et
-					d&apos;accompagnement sur mesure. Nos formations dédiées 100% aux
-					entrepreneurs vous accompagnent à chaque étape. OPCO, OPCA, CPF... Optimisez
-					le financement de votre formation.
-				</P>
+        Nos formations dédiées 100% aux entrepreneurs vous accompagnent à chaque
+        étape.
 
-				<div className="hero__ctas">
-					<Button variant="ghost" href="#guide" className="hero__btn hero__btn--secondary">
-						Se laisser guider
-					</Button>
-					<Button variant="primary" href="#formations" className="hero__btn hero__btn--primary">
-						Choisir votre formation
-					</Button>
-				</div>
-			</div>
+        OPCO, OPCA, CPF... Optimisez le financement de votre formation.
+      </P>
 
-			<footer className="hero__footer">
-				<div className="hero__rating">
-					<img
-						src="/assets/badges/evalutation.png"
-						alt="Évaluation moyenne des formations"
-					/>
-				</div>
-				<div className="hero__floating">
-					<img src="/assets/icons/logo-icon-center.svg" alt="" aria-hidden="true" />
-				</div>
-				<div className="hero__scroll">
-					<img src="/assets/icons/down-arrow.svg" alt="" aria-hidden="true" />
-				</div>
-			</footer>
-		</section>
-	</>
-	)
+      {/* CTA Buttons */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 120,
+          left: 40,
+          zIndex: 10,
+          width: "100%",
+        }}
+      >
+        <Stack direction="row" spacing={2} className="hero__buttons">
+          <Button className="hero__btn-secondary">Se laisser guider</Button>
+          <Button className="hero__btn-primary">Choisir votre formation</Button>
+        </Stack>
+      </Box>
+      {/* </div> */}
+
+      {/* Evaluation Badge */}
+      <div className="hero__evaluation">
+        <img
+          src="/assets/badges/evalutation.png"
+          alt="Évaluation moyenne de nos formations"
+        />
+      </div>
+
+      {/* Bottom Center Logo Icon */}
+      <div className="hero__bottom-logo">
+        <img src="/assets/icons/logo-icon-center.svg" alt="Spot Formations" />
+      </div>
+    </section>
+  );
 }
 
-export default Hero
-
-
+export default Hero;
