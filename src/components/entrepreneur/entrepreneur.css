@@ -1,0 +1,209 @@
+@import "../../styles/variables.css";
+
+.entrepreneur {
+  width: 100%;
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.entrepreneur__container {
+  max-width: 1440px;
+  height: 320px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+}
+
+.entrepreneur-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 16px;
+  background: #c7f8ff;
+  border-radius: 12px;
+  position: absolute;
+  width: 483px;
+  height: 308px;
+  left: 28px;
+  top: 5px;
+  z-index: 3;
+}
+
+.entrepreneur-card::before,
+.entrepreneur-card::after {
+  content: "";
+  position: absolute;
+  background: #c7f8ff;
+  border-radius: 16px;
+}
+
+.entrepreneur-card::before {
+  width: 5px;
+  height: 276px;
+  left: 486px;
+  top: 16px;
+  z-index: -1;
+}
+
+.entrepreneur-card::after {
+  width: 3px;
+  height: 250px;
+  left: 494px;
+  top: 29px;
+  z-index: -2;
+}
+
+.entrepreneur-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  padding-right: 100px;
+}
+
+.entrepreneur-question {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1d1d1d;
+  
+  margin: 6px ;
+}
+
+.entrepreneur-text {
+  font-family: "Lato";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1d1d1d;
+  margin: 10px 0 6px 0 ;
+}
+
+.entrepreneur-image {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.entrepreneur-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.entrepreneur__author {
+  font-family: "Lato", sans-serif;
+  font-style: "italic";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  color: #1b365e;
+  margin: 15px 0 6px  0 ;
+}
+
+.entrepreneur__main-content {
+  position: absolute;
+  left: 554px;
+  top: 0;
+  width: 676px;
+}
+
+.entrepreneur__title {
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 64px;
+  color: #1b365e;
+  margin: 0 0 28px 0;
+}
+
+.entrepreneur__description {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #1d1d1d;
+  margin: 0 0 47px 0;
+}
+
+.entrepreneur__description strong {
+  font-weight: 700;
+}
+
+.entrepreneur__buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .entrepreneur__container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .entrepreneur__card {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .entrepreneur {
+    padding: 40px 0;
+  }
+
+  .entrepreneur__container {
+    padding: 0 20px;
+  }
+
+  .entrepreneur__title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .entrepreneur__buttons {
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 76px;
+    /* identical to box height, or 127% */
+    letter-spacing: 0.02em;
+    color: #1B365E;
+  }
+
+  .entrepreneur__buttons button {
+    width: 100%;
+  }
+}
+
+.entrepreneur__logo {
+  position: absolute;
+  width: 112px;
+  height: 67px;
+  right: 28px;
+  top: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.entrepreneur__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

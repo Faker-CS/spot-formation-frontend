@@ -68,22 +68,7 @@
   );
 }
 
-/* Bottom Center Logo Icon */
-.hero__bottom-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -35px;
-  z-index: 9999; /* Set a very high value to ensure it's on top */
-  width: 80px;
-  height: 80px;
-  /* background: white; */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-}
+
 
 /* Buttons Container */
 .hero__buttons {

@@ -1,0 +1,314 @@
+@import "../../../styles/variables.css";
+
+/* Card Container */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+  gap: 8px;
+  
+  width: 284px;
+  height: 303px;
+  
+  background: #C7F8FF;
+  border-radius: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.card__header {
+  width: 244px;
+  height: 28px;
+  position: relative;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Category Tag */
+.card__tag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 8px;
+  gap: 12px;
+  
+  position: absolute;
+  width: auto;
+  max-width: 150px;
+  height: 28px;
+  left: 0px;
+  top: 0px;
+  
+  background: #FFFFFF;
+  border-radius: 16px;
+  
+  /* Tag text styling */
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: #1B515E;
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Bookmark Icon */
+.card__bookmark {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  right: 0px;
+  top: 2px;
+  
+  background: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card__bookmark:hover {
+  background: #f5f5f5;
+}
+
+/* Content Section */
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  
+  width: 244px;
+  height: 167px;
+  
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  
+  width: 240px;
+  
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Title Section */
+.card__title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 3px;
+  
+  width: 240px;
+  
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.card__title {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #1D1D1D;
+  
+  margin: 0;
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.card__location {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #1B365E;
+  
+  margin: 0;
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Description */
+.card__description {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #1D1D1D;
+  
+  margin: 0;
+  text-align: left;
+  
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Price Section */
+.card__price-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+/* Price */
+.card__price {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #1B365E;
+}
+
+/* Financement OPCO */
+.card__financing {
+  width: auto;
+  height: 20px;
+  white-space: nowrap;
+  
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: #1B365E;
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Divider */
+.card__divider {
+  width: 244px;
+  height: 0px;
+  border: 1px solid #FFFFFF;
+  
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Footer */
+.card__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0px 0px;
+  gap: 10px;
+  
+  width: 244px;
+  height: 44px;
+  
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+}
+
+/* Discover Button */
+.card__discover-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #1B365E;
+  
+  transition: opacity 0.3s ease;
+}
+
+.card__discover-btn:hover {
+  opacity: 0.7;
+}
+
+.card__discover-btn svg {
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.card__discover-btn span {
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Register Button */
+.card__register-btn {
+  background: #1B365E !important;
+  color: #FFFFFF !important;
+  border-radius: 9px !important;
+  padding: 10px 20px !important;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  line-height: 18px !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  min-width: auto !important;
+  height: 36px !important;
+}
+
+.card__register-btn:hover {
+  background: #163054 !important;
+}

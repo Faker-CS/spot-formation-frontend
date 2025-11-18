@@ -1,0 +1,67 @@
+.follow-banner {
+  width: 100%;
+  position: relative;
+}
+
+.follow-banner__top-bar {
+  height: 10px;
+  background: #fff4e6; /* soft orange strip */
+}
+
+.follow-banner__content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.follow-banner__icon {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  position: absolute;
+  width: 112.47px;
+  height: 112.47px;
+  left: calc(50% - 112.47px / 2 + 0.23px);
+  top: -35px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #40bfde;
+  border-radius: 30px;
+}
+
+.follow-banner__icon svg {
+  display: block;
+}
+
+.follow-banner__icon-img {
+  width: 81.8px;
+  height: 81.8px;
+  display: block;
+  object-fit: contain;
+  margin: auto;
+}
+
+.follow-banner__title {
+  font-family: "Red Hat Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #1b365e;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .follow-banner__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}

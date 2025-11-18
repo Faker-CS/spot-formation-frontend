@@ -1,0 +1,342 @@
+@import "../../../styles/variables.css";
+
+.top-formations {
+  width: 1440px;
+  max-width: 100%;
+  height: auto;
+  min-height: 1026px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.top-formations__container {
+  width: 1306px;
+  max-width: 100%;
+  height: auto;
+  min-height: 1006px;
+  padding: 30px 0 80px 0px;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+.top-formations__title {
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 79px;
+  text-align: center;
+  color: #1b365e;
+  margin: 0 0 40px 0;
+}
+
+.top-formations__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 116px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.top-formations__tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 24px;
+  gap: 8px;
+  white-space: nowrap;
+
+  height: 44px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 24px;
+  cursor: pointer;
+
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #1b365e;
+
+  transition: all 0.3s ease;
+}
+
+.top-formations__tab:hover {
+  background: #f9f9f9;
+  border-color: #1b365e;
+}
+
+.top-formations__tab--active {
+  background: #1b365e;
+  color: #ffffff;
+  border-color: #1b365e;
+}
+
+.top-formations__tab--active:hover {
+  background: #163054;
+}
+
+.top-formations__content {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  gap: 40px;
+}
+
+.top-formations__grid {
+  width: 100%;
+}
+
+.top-formations__description {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #1D1D1D;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.top-formations__link {
+  color: #1b365e;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.top-formations__link:hover {
+  color: #1b365e;
+  text-decoration: underline;
+}
+
+/* Cards Section with Arrows */
+.top-formations__cards-section {
+  position: relative;
+  width: 100%;
+}
+
+.top-formations__nav-arrows {
+  position: absolute;
+  top: 65px;
+  right: -60px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+/* Cards Container with Navigation */
+.top-formations__cards-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+}
+
+.top-formations__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  padding: 50px 0 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Financing Text */
+.top-formations__financing-text {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #1B365E;
+  margin: 40px auto 0;
+  max-width: 800px;
+}
+
+/* Financing Logos */
+.top-formations__logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 10px;
+  /* padding: 10px; */
+  flex-wrap: wrap;
+}
+
+.top-formations__logo {
+  height: 80px;
+  width: 160px;
+  margin: 30px;
+  object-fit: contain;
+}
+
+/* Action Buttons */
+.top-formations__action-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
+  margin: 25px auto 0;
+  justify-content: center;
+}
+
+/* Card Wrapper with Rank and Stars */
+.top-formations__card-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-formations__rank {
+  font-family: 'Red Hat Display', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 84px;
+  line-height: 84px;
+  color: #1B365E;
+  text-align: center;
+}
+
+.top-formations__rank--blue {
+  color: #40BFDE;
+}
+
+.top-formations__stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1D1D1D;
+}
+
+.top-formations__stars img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Navigation Buttons */
+.top-formations__nav-btn {
+  width: 35px;
+  height: 75px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.top-formations__nav-btn:hover {
+  opacity: 0.7;
+}
+
+.top-formations__nav-btn:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+.top-formations__nav-btn img {
+  width: 40px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .top-formations {
+    padding: 60px 0;
+  }
+
+  .top-formations__title {
+    font-size: 36px;
+    line-height: 48px;
+    margin-bottom: 30px;
+  }
+
+  .top-formations__tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .top-formations__tab {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.top-formations__loading {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  color: #1b365e;
+  padding: 60px 0;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .top-formations__title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.hero__bottom-logo {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 10px;
+  
+  position: absolute;
+  width: 65px;
+  height: 45px;
+  left: calc(50% - 65px/2);
+  transform: none;
+  bottom: 36px;
+  z-index: 9999;
+  
+  background: #FFFFFF;
+  border-bottom: 1px solid #40BFDE;
+  border-radius: 40px;
+}

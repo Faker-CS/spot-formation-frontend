@@ -15,7 +15,7 @@ function Hero() {
 
       {/* Main Content */}
       {/* <div className="hero__content"> */}
-      <H1 className="">
+      <H1 >
         Réussir, c'est notre métier. Le vôtre ?
       </H1>
       <Stack sx={{ height: 10 }} spacing={1} >
@@ -57,11 +57,6 @@ function Hero() {
           src="/assets/badges/evalutation.png"
           alt="Évaluation moyenne de nos formations"
         />
-      </div>
-
-      {/* Bottom Center Logo Icon */}
-      <div className="hero__bottom-logo">
-        <img src="/assets/icons/logo-icon-center.svg" alt="Spot Formations" />
       </div>
     </section>
   );

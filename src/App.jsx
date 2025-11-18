@@ -1,14 +1,12 @@
 import "./App.css";
-import { P3, P2 } from "./components/common/Typography/Typography";
-import Hero from "./components/hero/Hero";
-import Header from "./components/layout/Header/Header";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
 
 function App() {
   return (
     <>
-      <Header />
 
-      <Hero />
+      <RouterProvider router={router} />
     </>
   );
 }

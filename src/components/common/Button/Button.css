@@ -50,11 +50,16 @@
 }
 
 .hero__btn-secondary:hover {
-  background: #2a4670;
-  transform: translateY(-2px);
+  background: #c7f8ff;
+  border: 1px solid #40bfde;
+  border-radius: 8px;
+  color: #1b365e;
 }
 .hero__btn-secondary:active {
-  transform: translateY(0);
+  background: #c7f8ff;
+  border: 1px solid #40bfde;
+  color: #20405c;
+  border-radius: 8px;
 }
 
 /* Primary variant - orange gradient like the screenshot */
@@ -68,7 +73,7 @@
   padding: 16px 40px;
   gap: 10px;
 
-  background: linear-gradient(180deg, #ffbc41 0%, #ff5758 100%);
+  background: linear-gradient(180deg, #ffbc41 26%, #ff5758 100%);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -84,11 +89,58 @@
 }
 
 .hero__btn-primary:hover {
-  opacity: 0.9;
+  background: #fc7f16;
+  color: white;
+}
+
+.hero__btn-primary:active {
+  background: #fc7f16;
+  color: #ffe4b4;
+}
+
+
+
+/* Primary variant */
+.btn--primary {
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+}
+
+
+
+/* Ghost variant */
+.btn--ghost {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 40px;
+  gap: 10px;
+  background: #ffffff;
+  color: #fc7f16;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(180deg, #ffbc41 26%, #ff5758 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  width: auto;
+  height: 58px;
+}
+
+.btn--ghost:hover {
+  background: #fc7f16;
+  background-image: none;
+  color: #ffffff;
+  border-color: #fc7f16;
   transform: translateY(-2px);
 }
-.btn--primary:active {
-  transform: translateY(0);
+
+.btn--ghost:active {
+  background: #e67214;
+  color: #ffe4b4;
 }
 
 /* Focus states */
