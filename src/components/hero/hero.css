@@ -72,7 +72,7 @@
 
 /* Buttons Container */
 .hero__buttons {
-  position: absolute;
+  position: relative;
   top: 40%;
   display: flex;
   gap: 20px;
@@ -146,7 +146,7 @@
   padding: 8px;
   gap: 12px;
 
-  position: absolute;
+  position: relative;
   left: 76.74%;
   right: 1.94%;
   top: 77.14%;
@@ -155,6 +155,8 @@
   background: #1b515e;
   border-radius: 8px;
 }
+
+
 
 /* Evaluation Icon */
 .hero__eval-icon {

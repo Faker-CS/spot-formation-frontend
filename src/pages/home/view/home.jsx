@@ -9,14 +9,16 @@ import Advantages from "../../../components/advantages/Advantages";
 import Testimonials from "../../../components/testimonials";
 import Trainers from "../../../components/trainers";
 import Evaluation from "../../../components/evaluation/Evaluation";
+import FAQ from "../../../components/faq";
+import Footer from "../../../components/layout/Footer";
 
 export default function Home() {
   return (
-    <div>
-      <Header />
+    <div style={{overflow:"hidden"}}>
+      {/* <Header />
 
-      <Hero />
-      <div style={{ marginTop: "600px" }}>
+      <Hero /> */}
+      <div style={{ marginTop: "80px"}}>
         <Categories />
 
         <TopFormations />
@@ -25,9 +27,11 @@ export default function Home() {
         <FollowBanner />
         <Testimonials />
         <Trainers />
-                <Evaluation />
+        <Evaluation />
+        <FAQ />
 
       </div>
+      <Footer />
     </div>
   );
 }

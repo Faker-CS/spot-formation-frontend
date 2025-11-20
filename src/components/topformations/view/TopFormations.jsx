@@ -93,9 +93,7 @@ export default function TopFormations() {
 
   return (
     <section className="top-formations">
-      <div className="hero__bottom-logo">
-        <img src="/vector.svg" alt="Spot Formations" />
-      </div>
+      
       <div className="top-formations__container">
         <h2 className="top-formations__title">Le top de nos formations</h2>
 

@@ -15,23 +15,18 @@ function Hero() {
 
       {/* Main Content */}
       {/* <div className="hero__content"> */}
-      <H1 >
-        Réussir, c'est notre métier. Le vôtre ?
-      </H1>
-      <Stack sx={{ height: 10 }} spacing={1} >
-        <H6 >
-          Formez-vous, osez, réussissez !
-          Nous avons ce qu'il vous faut pour dévoiler votre vrai potentiel.
+      <H1>Réussir, c'est notre métier. Le vôtre ?</H1>
+      <Stack sx={{ height: 10 }} spacing={1}>
+        <H6>
+          Formez-vous, osez, réussissez ! Nous avons ce qu'il vous faut pour
+          dévoiler votre vrai potentiel.
         </H6>
       </Stack>
       <P>
         Développez vos projets grâce à nos solutions de formation et
-        d'accompagnement sur mesure.
-
-        Nos formations dédiées 100% aux entrepreneurs vous accompagnent à chaque
-        étape.
-
-        OPCO, OPCA, CPF... Optimisez le financement de votre formation.
+        d'accompagnement sur mesure. Nos formations dédiées 100% aux
+        entrepreneurs vous accompagnent à chaque étape. OPCO, OPCA, CPF...
+        Optimisez le financement de votre formation.
       </P>
 
       {/* CTA Buttons */}

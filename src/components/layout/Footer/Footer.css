@@ -1,0 +1,415 @@
+.footer {
+  width: 100%;
+  height: 413px;
+  background: #1b365e;
+
+  color: #ffffff;
+}
+
+.footer__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 28px 0 0 0;
+}
+
+.footer__top {
+  display: flex;
+  gap: 40px;
+}
+
+.footer__left-section {
+  position: relative;
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid #c7f8ff;
+  margin-bottom: 110px;
+}
+
+.footer__left {
+  flex: 0 0 auto;
+}
+
+.footer__description {
+  flex: 0 0 270px;
+}
+
+.footer__left-lang {
+  position: relative;
+  left: -41.5%;
+  width: 104px;
+  bottom: -55px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.footer__left-lang-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #c7f8ff;
+  padding: 4px;
+}
+
+.footer__left-lang-text {
+  font-family: "Lato";
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.footer__divider {
+  border-bottom: 1px solid #c7f8ff;
+}
+
+.footer__image-section {
+  position: relative;
+  width: 242px;
+  height: auto;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__image {
+  width: 221px;
+  height: 125px;
+  object-fit: cover;
+}
+
+.footer__logo {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  width: 221px;
+  height: 15px;
+  margin-top: -10px;
+  margin-bottom: 14px;
+}
+
+.footer__description-title {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 18px 0 8px 0;
+}
+
+.footer__description-text {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.footer__links {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__column:first-child {
+  margin-top: 18px;
+  width: 188px;
+  height: 154px;
+}
+
+.footer__column:nth-child(2) {
+  margin-top: 18px;
+  width: 157px;
+  height: 214px;
+}
+
+.footer__column:nth-child(3) {
+  margin-top: 18px;
+  width: 168px;
+  height: 257px;
+}
+
+.footer__column:nth-child(4) {
+  margin-top: 18px;
+  width: 143px;
+  height: 215px;
+}
+
+.footer__column-title {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+
+.footer__list li {
+  margin-bottom: 6px;
+}
+
+.footer__list li:last-child {
+  margin-bottom: 0;
+}
+
+.footer__list a {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__list a:hover {
+  color: #40bfde;
+}
+
+.footer__links-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__link-accessibility,
+.footer__link-referent {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #40bfde;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer__link-accessibility:hover,
+.footer__link-referent:hover {
+  opacity: 0.8;
+}
+
+.footer__qualiopi {
+  margin-top: auto;
+}
+
+.footer__qualiopi-badge {
+  width: 100px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.footer__declaration {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #40bfde;
+  margin: 0;
+}
+
+.footer__social {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.footer__social-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.footer__social-link:hover {
+  background: #40bfde;
+  border-color: #40bfde;
+}
+
+.footer__social-link i {
+  font-size: 16px;
+}
+
+.footer__bottom {
+  padding: 56px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__copyright {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #f5b942;
+  margin-top: 18px;
+}
+
+.footer__windows {
+  text-align: right;
+}
+
+.footer__windows-title {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+}
+
+.footer__windows-text {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .footer__links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 0 0;
+    height: auto;
+  }
+
+  .footer__container {
+    padding: 0 24px;
+  }
+
+  .footer__top {
+    flex-direction: column;
+    gap: 40px;
+    display: flex;
+  }
+
+  .footer__left-section {
+    flex-direction: column;
+    margin-bottom: 1px;
+    border-bottom: none;
+  }
+
+  .footer__left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .footer__image-section {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  .footer__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer__logo {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .footer__description {
+    flex: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .footer__left-lang {
+    position: static;
+    width: auto;
+    margin-top: 20px;
+    left: 0;
+    bottom: 0;
+    order: 10;
+    padding-top: 20px;
+    border-top: 1px solid #c7f8ff;
+  }
+
+  .footer__links {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    order: 5;
+  }
+
+  .footer__column:first-child,
+  .footer__column:nth-child(2),
+  .footer__column:nth-child(3),
+  .footer__column:nth-child(4) {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+    padding: 32px 0;
+    order: 15;
+  }
+
+  .footer__copyright {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .footer__windows {
+    text-align: left;
+  }
+
+  .footer__social {
+    justify-content: flex-start;
+  }
+}

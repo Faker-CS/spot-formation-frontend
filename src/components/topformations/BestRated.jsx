@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../common/card";
 import Button from "../common/Button";
 import DotNavigation from "../common/DotNavigation";
@@ -11,7 +11,59 @@ export default function BestRated({
   handleBookmark,
   handleDiscover,
 }) {
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [mobileIndex, setMobileIndex] = useState(currentIndex || 0);
+
   const visibleFormations = formations.slice(currentIndex, currentIndex + 4);
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  useEffect(() => {
+    // Sync mobile index when tab or global index changes (avoid unnecessary setState)
+    const target = currentIndex || 0;
+    if (mobileIndex !== target) setMobileIndex(target);
+  }, [currentIndex, formations]);
+
+  const handleNextMobile = () => {
+    setMobileIndex((prev) => Math.min(prev + 1, formations.length - 1));
+  };
+
+  const handlePrevMobile = () => {
+    setMobileIndex((prev) => Math.max(prev - 1, 0));
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      handleNextMobile();
+    }
+    if (isRightSwipe) {
+      handlePrevMobile();
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
+
+  const handleCardClick = (index) => {
+    if (index > mobileIndex) {
+      handleNextMobile();
+    } else if (index < mobileIndex) {
+      handlePrevMobile();
+    }
+  };
 
   return (
     <>
@@ -90,16 +142,22 @@ export default function BestRated({
           </div>
 
           {/* Mobile Carousel - show one card at a time */}
-          <div className="top-formations__cards--mobile">
+          <div 
+            className="top-formations__cards--mobile"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             <div className="top-formations__cards-track">
-              {formations.map((formation) => (
+              {formations.map((formation, index) => (
                 <div
                   key={formation.id}
-                  className="top-formations__card-wrapper"
+                  className={`top-formations__card-wrapper ${index === mobileIndex ? 'active' : ''}`}
                   style={{
-                    transform: `translateX(-${currentIndex * 100}%)`,
+                    transform: `translateX(-${mobileIndex * 100}%)`,
                     transition: 'transform 0.3s ease-in-out'
                   }}
+                  onClick={() => handleCardClick(index)}
                 >
                   <div
                     className={`top-formations__rank ${
@@ -132,15 +190,8 @@ export default function BestRated({
             {/* Mobile Dot Navigation */}
             <DotNavigation
               total={formations.length}
-              current={currentIndex}
-              onDotClick={(index) => {
-                const diff = index - currentIndex;
-                if (diff > 0) {
-                  for (let i = 0; i < diff; i++) handleNext();
-                } else if (diff < 0) {
-                  for (let i = 0; i < Math.abs(diff); i++) handlePrev();
-                }
-              }}
+              current={mobileIndex}
+              onDotClick={(index) => setMobileIndex(index)}
             />
           </div>
         </div>

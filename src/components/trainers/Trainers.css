@@ -180,9 +180,11 @@
     margin-bottom: 24px;
   }
 
+  /* Ensure the main image column appears before textual content on mobile */
   .trainers__left {
     flex: 0 0 auto;
     width: 100%;
+    order: 1;
   }
 
   .trainers__main-image {
@@ -194,27 +196,37 @@
     width: 150px;
   }
 
+  /* Right column becomes second; internal ordering changes place videos above text and CTA */
   .trainers__right {
     gap: 16px;
+    order: 2;
+    display: flex;
+    flex-direction: column;
   }
 
-  .trainers__text {
-    gap: 12px;
-  }
-
-  .trainers__text p {
-    font-size: 12px;
-    line-height: 18px;
-  }
-
+  /* Inside right column: place CTA first, then videos, then description */
   .trainers__cta-btn {
     width: 100%;
     text-align: center;
+    order: 1;
+    margin-top: 8px;
   }
 
   .trainers__video-grid {
     gap: 12px;
     justify-content: center;
+    order: 2;
+    width: 100%;
+  }
+
+  .trainers__text {
+    gap: 12px;
+    order: 3;
+  }
+
+  .trainers__text p {
+    font-size: 12px;
+    line-height: 18px;
   }
 
   .trainers__video-item {
