@@ -145,48 +145,157 @@
   align-items: center;
   gap: 32px;
   flex-wrap: wrap;
+  position: absolute;
+  left: 554px;
+  top: 218px;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
   .entrepreneur__container {
+    display: flex;
     flex-direction: column;
+    height: auto;
     gap: 40px;
   }
 
-  .entrepreneur__card {
+  .entrepreneur-card {
+    position: static;
     width: 100%;
-    min-width: auto;
+  }
+
+  .entrepreneur__main-content {
+    position: static;
+    width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .entrepreneur {
-    padding: 40px 0;
+    padding: 20px 0;
   }
 
   .entrepreneur__container {
-    padding: 0 20px;
+    padding: 0 2px;
+    padding-left: 8px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .entrepreneur__logo {
+    position: static !important;
+    width: 112px;
+    height: 67px;
+    margin: 0 auto 20px;
+    display: flex !important;
+    order: 0;
+    flex: none;
+    flex-grow: 0;
+    right: auto;
+    top: auto;
+  }
+
+  .entrepreneur__main-content {
+    position: static;
+    width: 100%;
+    order: 1;
+    text-align: center;
   }
 
   .entrepreneur__title {
     font-size: 36px;
-    line-height: 48px;
+    line-height: 40px;
+    margin: 0 0 16px 0;
+  }
+
+  .entrepreneur__description {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 20px 0;
+    text-align: justify;
   }
 
   .entrepreneur__buttons {
-    font-family: "Red Hat Display";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 60px;
-    line-height: 76px;
-    /* identical to box height, or 127% */
-    letter-spacing: 0.02em;
-    color: #1B365E;
+    position: static;
+    flex-direction: column;
+    gap: 12px;
+    order: 3;
+    width: 100%;
+    left: auto;
+    top: auto;
   }
 
   .entrepreneur__buttons button {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .entrepreneur-card {
+    position: relative;
     width: 100%;
+    height: auto;
+    padding: 15px;
+    padding-left: 12px;
+    order: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .entrepreneur-card::before {
+    width: 4px;
+    height: calc(100% - 32px);
+    left: auto;
+    right: -8px;
+    top: 16px;
+    display: block;
+  }
+
+  .entrepreneur-card::after {
+    width: 3px;
+    height: calc(100% - 58px);
+    left: auto;
+    right: -14px;
+    top: 29px;
+    display: block;
+  }
+
+  .entrepreneur-content {
+    padding-right: 0;
+    align-items: center;
+    text-align: center;
+    order: 2;
+  }
+
+  .entrepreneur-question {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 0 8px 0;
+    text-align: center;
+  }
+
+  .entrepreneur-text {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 8px 0;
+    text-align: center;
+  }
+
+  .entrepreneur-image {
+    position: static;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 16px;
+    order: 1;
+  }
+
+  .entrepreneur__author {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 8px 0 0 0;
+    text-align: center;
   }
 }
 

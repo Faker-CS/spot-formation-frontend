@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../common/card";
 import Button from "../common/Button";
+import DotNavigation from "../common/DotNavigation";
 
 export default function BestRated({
   formations,
@@ -26,7 +27,8 @@ export default function BestRated({
       </p>
 
       <div className="top-formations__cards-section">
-        <div className="top-formations__nav-arrows">
+        {/* Desktop Navigation Arrows */}
+        <div className="top-formations__nav-arrows top-formations__nav-arrows--desktop">
           <button
             className="top-formations__nav-btn top-formations__nav-btn--next"
             aria-label="Suivant"
@@ -52,7 +54,8 @@ export default function BestRated({
         </div>
 
         <div className="top-formations__cards-container">
-          <div className="top-formations__cards">
+          {/* Desktop Grid - show all 4 cards */}
+          <div className="top-formations__cards top-formations__cards--desktop">
             {visibleFormations.map((formation) => (
               <div
                 key={formation.id}
@@ -84,6 +87,61 @@ export default function BestRated({
                 />
               </div>
             ))}
+          </div>
+
+          {/* Mobile Carousel - show one card at a time */}
+          <div className="top-formations__cards--mobile">
+            <div className="top-formations__cards-track">
+              {formations.map((formation) => (
+                <div
+                  key={formation.id}
+                  className="top-formations__card-wrapper"
+                  style={{
+                    transform: `translateX(-${currentIndex * 100}%)`,
+                    transition: 'transform 0.3s ease-in-out'
+                  }}
+                >
+                  <div
+                    className={`top-formations__rank ${
+                      formation.rank > 1 ? "top-formations__rank--blue" : ""
+                    }`}
+                  >
+                    #{formation.rank}
+                  </div>
+                  <div className="top-formations__stars">
+                    <span>{formation.rating}</span>
+                    <img
+                      src="../src/assets/icons/icon-star.svg"
+                      alt="étoiles"
+                    />
+                  </div>
+                  <Card
+                    category={formation.category}
+                    title={formation.title}
+                    location={formation.location}
+                    description={formation.description}
+                    price={formation.price}
+                    financing={formation.financing}
+                    onBookmark={() => handleBookmark(formation.id)}
+                    onDiscover={() => handleDiscover(formation.id)}
+                  />
+                </div>
+              ))}
+            </div>
+            
+            {/* Mobile Dot Navigation */}
+            <DotNavigation
+              total={formations.length}
+              current={currentIndex}
+              onDotClick={(index) => {
+                const diff = index - currentIndex;
+                if (diff > 0) {
+                  for (let i = 0; i < diff; i++) handleNext();
+                } else if (diff < 0) {
+                  for (let i = 0; i < Math.abs(diff); i++) handlePrev();
+                }
+              }}
+            />
           </div>
         </div>
 

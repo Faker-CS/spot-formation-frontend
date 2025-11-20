@@ -28,6 +28,11 @@ export default function Advantages() {
         <h2 className="advantages__title">Les avantages de notre méthode</h2>
 
         <div className="advantages__header">
+          <p className="advantages__description">
+            Nous optimisons le développement et le succès des entrepreneurs et
+            des futurs indépendants, grâce à un accompagnement personnalisé et
+            sur-mesure
+          </p>
           <div className="advantages__rating">
             <img
               src="public/assets/badges/Evalutation2.png"
@@ -35,11 +40,6 @@ export default function Advantages() {
               className="advantages__rating-icon"
             />
           </div>
-          <p className="advantages__description">
-            Nous optimisons le développement et le succès des entrepreneurs et
-            des futurs indépendants, grâce à un accompagnement personnalisé et
-            sur-mesure
-          </p>
         </div>
 
         <div className="advantages__grid">

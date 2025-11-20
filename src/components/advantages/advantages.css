@@ -330,40 +330,163 @@
 
 @media (max-width: 768px) {
   .advantages {
-    padding: 40px 0;
+    padding: 20px 0;
+    height: auto;
   }
 
   .advantages__container {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
   .advantages__title {
-    font-size: 32px;
-    line-height: 42px;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0 0 16px 0;
+    text-align: center;
+  }
+
+  .advantages__header {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .advantages__rating {
+    position: static;
+    margin: 0 auto;
+    padding-top: 5px;
+  }
+
+  .advantages__rating-icon {
+    height: 48px;
+  }
+
+  .advantages__description {
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 5px;
   }
 
   .advantages__grid {
     flex-direction: column;
-    gap: 24px;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    display: flex;
+    padding-top: 35px;
+    padding-left: 60px;
+  }
+
+  .advantages__item {
+    gap: 8px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .advantages__item-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .advantages__item svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .advantages__item-title {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
   }
 
   .advantages__journey {
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 40px;
+    min-height: auto;
+    gap: 20px;
+    align-items: center;
   }
 
-  .advantages__journey-icon {
+  .advantages__journey::before {
+    width: 100px;
+    height: 800px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) rotate(90deg);
+    background-size: contain;
+  }
+
+  .advantages__journey-step {
+    position: static !important;
+    width: 100% !important;
+    max-width: 200px;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  .advantages__journey-step-1,
+  .advantages__journey-step-2,
+  .advantages__journey-step-3,
+  .advantages__journey-step-4,
+  .advantages__journey-step-5 {
+    position: static !important;
+    width: 100% !important;
+    max-width: 200px;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  .advantages__journey-decoration {
+    display: none;
+  }
+
+  .advantages__journey-ellipse {
+    display: none;
+  }
+
+  .advantages__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+    gap: 35px;
+    position: static;
+  }
+
+  .advantages__cta button {
+    width: 100%;
+
+  }
+
+  .advantages__financement {
+    position: static;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    color: #1d1d1d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .advantages__logo {
+    position: static;
     width: 150px;
-    height: 150px;
-  }
-
-  .advantages__journey-title {
-    font-size: 20px;
-    line-height: 28px;
-  }
-
-  .advantages__description {
-    font-size: 14px;
-    line-height: 22px;
+    height: auto;
+    margin: 16px auto 0;
+    transform: none;
+    padding-bottom: 70px;
   }
 }

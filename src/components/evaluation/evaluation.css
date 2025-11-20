@@ -2,23 +2,53 @@
 
 .evaluation {
   width: 100%;
+  background: #c7f8ff90;
+  min-height: 844px;
+  padding: 80px 0;
+  margin-top: 39px;
+  position: relative;
+  
+}
+.evaluation__evaluation-logo {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 10px;
+
+  position: absolute;
+  left: 50%;
+  top: -22px;
+  transform: translateX(-50%);
+
+  width: 65px;
+  height: 45px;
+  z-index: 9999;
+
   background: #ffffff;
-  padding: 60px 0;
+  border-bottom: 1px solid #40bfde;
+  border-radius: 40px;
 }
 
 .evaluation__container {
-  max-width: 1440px;
+  max-width: 1352px;
+  height: 677;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  text-align: center;
 }
 
 .evaluation__icon {
   width: 80px;
   height: 80px;
+  background: #ffe9e0;
+  border-radius: 50%;
+  margin-bottom: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,51 +60,177 @@
   object-fit: contain;
 }
 
-.evaluation__stars {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
+.evaluation__subtitle {
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 53px;
+  text-align: center;
+  letter-spacing: 0.02em;
 
-.evaluation__stars img {
-  width: 32px;
-  height: 32px;
+  color: #1b365e;
+  width: 802px;
+  height: 106px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
 
 .evaluation__title {
-  font-family: 'Lato', sans-serif;
+  font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 56px;
+  line-height: 60px;
   text-align: center;
-  color: #1B365E;
-  margin: 8px 0 0 0;
+  letter-spacing: 0.02em;
+  color: #1b365e;
+  margin: 60px;
 }
 
-.evaluation__subtitle {
-  font-family: 'Lato', sans-serif;
+.evaluation__content {
+  width: 1033px;
+  min-height: 420px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.evaluation__box {
+  flex: 1;
+  max-width: 580px;
+}
+
+.evaluation__form {
+  /* flex: 1; */
+  max-width: 412px;
+  height: 420px;
+}
+
+.evaluation__box-title {
+  font-family: "Lato";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 18px;
   line-height: 24px;
-  text-align: center;
-  color: #1B365E;
-  margin: 0;
+  letter-spacing: 0.02em;
+  color: #1b365e;
+  margin: 20px 12px 24px 0;
+  text-align: left;
+  width: 439px;
+  height: 60px;
+}
+
+.evaluation__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.evaluation__list-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin: 10px 0;
+}
+/* Title */
+
+.evaluation__icon-check {
+  width: 24px;
+  height: 24px;
+  background: #40bfde;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: #FFFFFF; */
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.evaluation__list-text {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: #1b365e;
+  flex: 1;
+  text-align: left;
 }
 
 @media (max-width: 768px) {
   .evaluation {
-    padding: 40px 0;
+    min-height: auto;
+    padding: 60px 0;
   }
 
-  .evaluation__title {
-    font-size: 20px;
-    line-height: 28px;
+  .evaluation__container {
+    padding: 0 24px;
+  }
+
+  .evaluation__icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 24px;
   }
 
   .evaluation__subtitle {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 22px;
+    margin: 0 0 16px 0;
+  }
+
+  .evaluation__title {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 40px 0;
+  }
+
+  .evaluation__content {
+    min-height: 300px;
+    max-width: 100%;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .evaluation__box,
+  .evaluation__form {
+    max-width: 412px;
+  }
+
+  .evaluation__box {
+    padding: 24px;
+  }
+
+  .evaluation__box-title {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 20px 0;
+  }
+
+  .evaluation__list {
+    gap: 12px;
+  }
+
+  .evaluation__list-item {
+    gap: 10px;
+  }
+
+  .evaluation__icon-check {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .evaluation__list-text {
+    font-size: 12px;
+    line-height: 18px;
   }
 }

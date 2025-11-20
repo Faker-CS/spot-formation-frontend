@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./topformations.css";
-import { mockFormations } from "../../../data/mockFormations";
+import { mockFormations } from "../../../data/mockTopFormations";
 import BestRated from "../BestRated";
 import MostRequested from "../MostRequested";
 import Financing from "../Financing";

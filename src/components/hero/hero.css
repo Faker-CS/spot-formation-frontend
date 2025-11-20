@@ -245,6 +245,11 @@
 }
 
 @media (max-width: 768px) {
+  .hero,
+  .hero__background {
+    height: 400px;
+  }
+
   .hero__title,
   .hero__title-line2 {
     font-size: 40px;
@@ -259,6 +264,15 @@
   .hero__description {
     font-size: 14px;
     line-height: 22px;
+  }
+
+  .hero__buttons {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    top: auto;
+    justify-content: center;
+    margin-top: 20px;
   }
 
   .hero__evaluation {

@@ -279,24 +279,144 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .top-formations {
-    padding: 60px 0;
+    padding: 0.1px 0;
   }
 
   .top-formations__title {
-    font-size: 36px;
-    line-height: 48px;
-    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+    padding: 0 10px;
   }
 
   .top-formations__tabs {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
+    flex-wrap: nowrap;
+    padding: 0 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
   }
 
   .top-formations__tab {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 10px;
+    flex-shrink: 0;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .top-formations__description {
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+
+  .top-formations__financing-text {
+    display: none;
+  }
+
+  .top-formations__logos {
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .top-formations__logo {
+    height: 85px;
+    width: 145px;
+    margin: 5px;
+  }
+
+  .top-formations__action-buttons {
+    flex-direction: column;
+    gap: 32px;
     width: 100%;
-    max-width: 300px;
+    padding: 0 10px;
+  }
+
+  .top-formations__action-buttons button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Hide desktop elements on mobile */
+  .top-formations__cards--desktop {
+    display: none !important;
+  }
+
+  .top-formations__nav-arrows--desktop {
+    display: none !important;
+  }
+
+  /* Show mobile carousel */
+  .top-formations__cards--mobile {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Show desktop elements */
+  .top-formations__cards--desktop {
+    display: grid !important;
+  }
+
+  .top-formations__nav-arrows--desktop {
+    display: flex !important;
+  }
+
+  /* Hide mobile carousel */
+  .top-formations__cards--mobile {
+    display: none !important;
+  }
+}
+
+/* Mobile Carousel Styles */
+.top-formations__cards--mobile {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+  padding: 0 20px;
+}
+
+.top-formations__cards-track {
+  display: flex;
+  width: 100%;
+  position: relative;
+  gap: 16px;
+}
+
+.top-formations__cards--mobile .top-formations__card-wrapper {
+  min-width: 70%;
+  flex-shrink: 0;
+  max-width: 320px;
+  position: relative;
+}
+
+/* Mobile specific positioning for rank and stars */
+@media (max-width: 768px) {
+  .top-formations__cards--mobile .top-formations__rank {
+    position: absolute;
+    top: -30px;
+    left: 10px;
+    font-size: 30px;
+    line-height: 24px;
+    z-index: 10;
+  }
+
+  .top-formations__cards--mobile .top-formations__stars {
+    position: absolute;
+    top: -25px;
+    right: 10px;
+    font-size: 15px;
+    z-index: 10;
+  }
+
+  .top-formations__cards--mobile .top-formations__stars img {
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -316,6 +436,10 @@
   .top-formations__title {
     font-size: 28px;
     line-height: 36px;
+  }
+
+  .top-formations__cards {
+    grid-template-columns: 1fr;
   }
 }
 

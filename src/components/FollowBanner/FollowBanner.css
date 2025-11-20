@@ -5,13 +5,22 @@
 
 .follow-banner__top-bar {
   height: 10px;
-  background: #fff4e6; /* soft orange strip */
+  background: #c7f8ff90;
 }
 
-.follow-banner__content {
+.follow-banner__container {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 40px;
+  background: #c7f8ff90;
+  padding-bottom: 48px; 
+}
+
+
+/* Use padding on the container to position the title below the absolute icon
+   instead of relying on large margins which cause layout problems. */
+.follow-banner__container {
+  padding-top: 103px;
 }
 
 .follow-banner__icon {
@@ -51,12 +60,13 @@
   font-family: "Red Hat Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 53px;
   text-align: center;
+  letter-spacing: 0.02em;
   color: #1b365e;
-  margin: 0;
+  margin: 0 0 30px 0; /* spacing controlled by container padding instead */
 }
 
 @media (min-width: 768px) {
@@ -64,4 +74,124 @@
     font-size: 24px;
     line-height: 32px;
   }
+}
+
+@media (max-width: 768px) {
+  .follow-banner__icon {
+    width: 70px;
+    height: 70px;
+    left: calc(50% - 35px);
+    top: -25px;
+    border-radius: 16px;
+  }
+
+  .follow-banner__icon-img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .follow-banner__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .follow-banner__item-title {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .follow-banner__item h4 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .follow-banner__item p {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 8px;
+    font-weight: 500;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .follow-banner__cta {
+    padding: 0 20px;
+  }
+
+  .follow-banner__cta button {
+    width: 100% !important;
+  }
+}
+
+/* When using the shared `.advantages__title` inside the banner, keep the icon spacing */
+.follow-banner .follow-banner__title {
+  margin: 0 0 47px 0;
+  font-size: 32px;
+    line-height: 40px;
+}
+
+.follow-banner__nav-arrows {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  right: 40px;
+  top: 380px;
+  z-index: 10;
+}
+
+/* Cards area: horizontal row layout with wrapping for responsiveness */
+.follow-banner__cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.follow-banner__card-wrapper {
+  width: 284px; /* match .card width */
+}
+
+/* Individual item container for FollowBanner entries */
+.follow-banner__item {
+  position: relative; /* parent for absolute title */
+  width: 48%;
+  box-sizing: border-box;
+}
+
+/* Title typography: keep color, size and font but don't force absolute positioning */
+.follow-banner__item-title {
+  font-family: "Red Hat Display", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 76px;
+  letter-spacing: 0.02em;
+  color: #40bfde;
+
+  margin: 0 0 12px 0;
+  display: block;
+}
+
+.follow-banner__cta {
+  display: flex;
+  justify-content: center; /* center horizontally under the cards */
+  align-items: center;
+  gap: 16px;
+  margin: 40px auto 0; /* space below the cards */
+  width: 100%;
+  padding: 0 40px; /* match container horizontal padding so button aligns */
+  background: transparent;
+  position: relative; /* anchor for absolutely positioned children if needed */
+  z-index: 3;
 }

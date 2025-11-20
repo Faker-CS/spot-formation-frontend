@@ -6,6 +6,10 @@ export default function Entrepreneur() {
   return (
     <section className="entrepreneur">
       <div className="entrepreneur__container">
+        <div className="entrepreneur__logo">
+          <img src="/vector.svg" alt="Spot Formations" />
+        </div>
+
         <div className="entrepreneur-card">
           <div className="entrepreneur-content">
             <h3 className="entrepreneur-question">
@@ -41,16 +45,13 @@ export default function Entrepreneur() {
             La qualité de notre méthode est garantie par notre{" "}
             <strong>processus d'amélioration continue</strong>.
           </p>
-
-          <div className="entrepreneur__buttons">
-            <Button variant="ghost">Se laisser guider</Button>
-            <Button variant="primary" class="hero__btn-primary">
-              Choisir votre formation
-            </Button>
-          </div>
         </div>
-        <div className="entrepreneur__logo">
-          <img src="/vector.svg" alt="Spot Formations" />
+
+        <div className="entrepreneur__buttons">
+          <Button variant="ghost">Se laisser guider</Button>
+          <Button variant="primary" class="hero__btn-primary">
+            Choisir votre formation
+          </Button>
         </div>
       </div>
     </section>
