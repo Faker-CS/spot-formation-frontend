@@ -15,9 +15,9 @@ import Footer from "../../../components/layout/Footer";
 export default function Home() {
   return (
     <div style={{overflow:"hidden"}}>
-      {/* <Header />
+      <Header />
 
-      <Hero /> */}
+      <Hero />
       <div style={{ marginTop: "80px"}}>
         <Categories />
 

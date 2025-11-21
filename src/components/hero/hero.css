@@ -1,21 +1,16 @@
-/* Hero Image Container */
+/* Hero Image Container - participate in normal document flow */
 .hero {
-  position: absolute;
-  width: 1440px;
-  height: 560px;
-  left: calc(50% - 1440px / 2);
-  top: 35px;
+  position: relative;
+  width: 100%;
+  min-height: 560px;
   overflow: hidden;
 }
 
 /* Background Solid */
 .hero__background {
-  position: absolute;
-  width: 100vw; /* Full viewport width */
-  height: 86%;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 45px;
+  position: relative;
+  width: 100%;
+  min-height: 560px;
   overflow: hidden;
   background: url("/public/assets/images/Hero-bg-1024.png");
   background-color: #1b365e;
@@ -72,8 +67,9 @@
 
 /* Buttons Container */
 .hero__buttons {
-  position: relative;
-  top: 40%;
+  position: absolute;
+  bottom: 120px;
+  left: 40px;
   display: flex;
   gap: 20px;
 }
@@ -145,13 +141,9 @@
   align-items: center;
   padding: 8px;
   gap: 12px;
-
-  position: relative;
-  left: 76.74%;
-  right: 1.94%;
-  top: 77.14%;
-  bottom: 9.66%;
-
+  position: absolute;
+  right: 40px;
+  bottom: 120px;
   background: #1b515e;
   border-radius: 8px;
 }
@@ -238,6 +230,30 @@
   object-fit: contain;
 }
 
+/* Floating logo that bridges the hero and following section */
+.hero__logo {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  gap: 10px;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -28px; /* overlaps the bottom edge of the hero */
+  z-index: 50;
+
+  width: 65px;
+  height: 45px;
+  background: #ffffff;
+  border-bottom: 1px solid #40BFDE;
+  border-radius: 40px;
+}
+
+.hero__logo img { width: 100%; height: auto; }
+
 /* Responsive adjustments */
 @media (max-width: 1440px) {
   .hero {
@@ -283,5 +299,38 @@
     right: auto;
     top: auto;
     margin-top: 20px;
+  }
+}
+
+/* Very small screens: set hero background height to 193px and adjust small spacing */
+@media (max-width: 480px) {
+  .hero,
+  .hero__background {
+    height: 193px;
+    min-height: 193px;
+  }
+
+  .hero__buttons {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    top: auto;
+    justify-content: center;
+    margin-top: 8px;
+    gap: 12px;
+  }
+
+  .hero__evaluation {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 6px 8px;
+    gap: 8px;
+  }
+
+  .hero__logo {
+    bottom: -18px;
+    width: 56px;
+    height: 36px;
   }
 }

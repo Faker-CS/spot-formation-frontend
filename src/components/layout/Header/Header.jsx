@@ -7,9 +7,9 @@ const Header = () => {
   return (
     <Box
       sx={{
-        position: "absolute",
+        position: "relative",
         width: "100%",
-        height: "45px",
+        height: { xs: "35px", sm: "45px" },
         left: 0,
         top: 2,
         backgroundColor: "#1B365E",
@@ -21,23 +21,24 @@ const Header = () => {
           flexDirection: "row",
           alignItems: "center",
           padding: 0,
-          gap: "8px",
+          gap: { xs: "1px", sm: "8px" },
           position: "absolute",
-          width: "424px",
-          height: "20px",
-          left: "calc(50% - 424px/2 - 5px)",
-          top: "8px",
+          width: { xs: "390px", sm: "424px" },
+          height: { xs: "18px", sm: "20px" },
+          left: { xs: "calc(50% - 390px/2)", sm: "calc(50% - 424px/2 - 5px)" },
+          top: { xs: "8px", sm: "8px" },
         }}
       >
         <Typography
           sx={{
-            width: "256px",
-            height: "20px",
+            width: { xs: "200px", sm: "256px" },
+            height: { xs: "18px", sm: "20px" },
             fontFamily: "Lato",
             fontStyle: "normal",
             fontWeight: 400,
-            fontSize: "14px",
-            lineHeight: "20px",
+            fontSize: { xs: "10px", sm: "14px" },
+            lineHeight: { xs: "16px", sm: "20px" },
+            marginLeft: { xs: "10px", sm: "0px" },
             textAlign: "center",
             letterSpacing: "0.02em",
             color: "#D9D9D9",
@@ -51,21 +52,14 @@ const Header = () => {
 
         <Box
           sx={{
-            width: "20px",
-            height: "20px",
+            width: { xs: "16px", sm: "20px" },
+            height: { xs: "16px", sm: "20px" },
             flex: "none",
             order: 1,
             flexGrow: 0,
             position: "relative",
           }}
         >
-          {/* <PhoneIcon
-            sx={{
-              width: '20px',
-              height: '20px',
-              color: '#FFFFFF',
-            }}
-          /> */}
           <img
             src="/assets/icons/icon-phone.svg"
             alt=""
@@ -77,13 +71,13 @@ const Header = () => {
 
         <Typography
           sx={{
-            width: "132px",
-            height: "18px",
+            width: { xs: "132px", sm: "132px" },
+            height: { xs: "18px", sm: "18px" },
             fontFamily: "Lato",
             fontStyle: "normal",
             fontWeight: 700,
-            fontSize: "15px",
-            lineHeight: "18px",
+            fontSize: { xs: "13px", sm: "15px" },
+            lineHeight: { xs: "16px", sm: "18px" },
             textAlign: "center",
             letterSpacing: "0.02em",
             color: "#FFFFFF",

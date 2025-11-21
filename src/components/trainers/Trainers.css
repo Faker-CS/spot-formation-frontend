@@ -20,26 +20,26 @@
 }
 
 .trainers__title {
-  font-family: 'Red Hat Display';
+  font-family: "Red Hat Display";
   font-style: normal;
   font-weight: 300;
   font-size: 44px;
   line-height: 53px;
   text-align: center;
   letter-spacing: 0.02em;
-  color: #1B365E;
+  color: #1b365e;
   margin: 0 0 12px 0;
 }
 
 .trainers__subtitle {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 26px;
   text-align: center;
   letter-spacing: 0.02em;
-  color: #40BFDE;
+  color: #40bfde;
   margin: 0 0 40px 0;
   padding: 18px 0;
 }
@@ -48,18 +48,20 @@
   display: flex;
   gap: 40px;
   align-items: flex-start;
-  margin-bottom: 40px;
 }
 
 .trainers__left {
   flex: 0 0 335px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .trainers__main-image {
   width: 335px;
   height: 335px;
-  background: linear-gradient(135deg, #FF9A56 0%, #FFB347 100%);
+  background: linear-gradient(135deg, #ff9a56 0%, #ffb347 100%);
   border-radius: 8px;
   position: relative;
   overflow: hidden;
@@ -78,7 +80,6 @@
 .trainers__logo img {
   width: 59.74px;
   height: auto;
-  
 }
 
 .trainers__right {
@@ -91,20 +92,20 @@
 .trainers__text {
   display: flex;
   flex-direction: column;
-  
+
   gap: 16px;
   width: 685px;
   height: 160px;
 }
 
 .trainers__text p {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.02em;
-  color: #1D1D1D;
+  color: #1d1d1d;
   margin: 0;
 }
 
@@ -116,15 +117,15 @@
   align-self: flex-start;
   padding: 12px 24px;
   background: transparent;
-  border: 2px solid #FF9A56;
+  border: 2px solid #ff9a56;
   border-radius: 8px;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.02em;
-  color: #FF9A56;
+  color: #ff9a56;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 230px;
@@ -132,8 +133,8 @@
 }
 
 .trainers__cta-btn:hover {
-  background: #FF9A56;
-  color: #FFFFFF;
+  background: #ff9a56;
+  color: #ffffff;
   width: 230px;
   height: 58px;
 }
@@ -147,9 +148,9 @@
 .trainers__video-item {
   width: 128.91px;
   height: 61.21px;
-  background: #E0E0E0;
+  background: #e0e0e0;
   border-radius: 8px;
-  border: 2px solid #CCCCCC;
+  border: 2px solid #cccccc;
 }
 
 @media (max-width: 768px) {
@@ -188,12 +189,13 @@
   }
 
   .trainers__main-image {
-    width: 100%;
-    height: 280px;
+    width: 330.01px;
+    height: 186.03px;
   }
 
   .trainers__logo img {
-    width: 150px;
+    width: 50px;
+    height: auto;
   }
 
   /* Right column becomes second; internal ordering changes place videos above text and CTA */
@@ -209,19 +211,38 @@
     width: 100%;
     text-align: center;
     order: 1;
-    margin-top: 8px;
+    margin-top: 75px;
+    margin-bottom: -60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 40px;
+    gap: 10px;
+    height: 58px;
+    background: #ffffff;
+    border-radius: 8px;
+    flex: none;
+    flex-grow: 0;
+  }
+
+  .trainers__cta-btn:hover {
+    background: #ff9a56;
+    color: #ffffff;
+    width: 100%;
+    height: 58px;
   }
 
   .trainers__video-grid {
     gap: 12px;
     justify-content: center;
-    order: 2;
     width: 100%;
   }
 
   .trainers__text {
     gap: 12px;
-    order: 3;
+    width: 100%;
   }
 
   .trainers__text p {
@@ -230,7 +251,7 @@
   }
 
   .trainers__video-item {
-    width: 80px;
+    width: 100%;
     height: 80px;
   }
 }

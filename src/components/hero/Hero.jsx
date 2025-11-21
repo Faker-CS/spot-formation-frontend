@@ -53,6 +53,11 @@ function Hero() {
           alt="Évaluation moyenne de nos formations"
         />
       </div>
+
+          {/* Floating logo that bridges Hero and next section */}
+          <div className="hero__logo">
+            <img src="/vector.svg" alt="Spot Formations" />
+          </div>
     </section>
   );
 }

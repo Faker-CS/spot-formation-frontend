@@ -3,11 +3,11 @@ import "./categories.css";
 import { H1 } from "../common/Typography";
 import { H2, H6 } from "../common/Typography/Typography";
 import DotNavigation from "../common/DotNavigation";
-import Cat01 from "../../assets/icons/Cat-01.png";
-import Cat02 from "../../assets/icons/Cat-02.png";
-import Cat03 from "../../assets/icons/Cat-03.png";
-import Cat04 from "../../assets/icons/Cat-04.png";
-import Cat05 from "../../assets/icons/Cat-5.png";
+import Cat01 from "../../assets/icons/Illust_MD_1.png";
+import Cat02 from "../../assets/icons/launching-2.svg";
+import Cat03 from "../../assets/icons/Ill-RS.svg";
+import Cat04 from "../../assets/icons/Illustration_productivité.svg";
+import Cat05 from "../../assets/icons/Illustration_leader.svg";
 
 export default function Categories() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -19,31 +19,26 @@ export default function Categories() {
       id: 1,
       icon: Cat01,
       title: "Marketing Digital",
-      description: "Formation en ligne",
     },
     {
       id: 2,
       icon: Cat02,
       title: "Management & Leadership",
-      description: "Formation en ligne",
     },
     {
       id: 3,
       icon: Cat03,
       title: "Marketing Digital",
-      description: "Formation en ligne",
     },
     {
       id: 4,
       icon: Cat04,
       title: "Finance & Comptabilité",
-      description: "Formation en ligne",
     },
     {
       id: 5,
       icon: Cat05,
       title: "Soft Skills & Communication",
-      description: "Formation en ligne",
     },
   ];
 
@@ -93,9 +88,6 @@ export default function Categories() {
 
   return (
     <section className="categories">
-      <div className="hero__logo">
-        <img src="/vector.svg" alt="Spot Formations" />
-      </div>
       <div className="categories__container">
         <H1 className="categories__title">
           Votre autonomie, c'est notre réussite !
@@ -109,8 +101,10 @@ export default function Categories() {
           {categories.map((category) => (
             <div key={category.id} className="category-card">
               <div className="category-card__icon">
-                <img src={category.icon} alt={category.title} />
-              </div>
+                <img src={category.icon} alt={category.title} /></div>
+                <br />
+                <p className="category-card__text">{category.title}</p>
+              
             </div>
           ))}
         </div>
@@ -138,6 +132,8 @@ export default function Categories() {
                 <div className="category-card__icon">
                   <img src={category.icon} alt={category.title} />
                 </div>
+                <p className="category-card__text">{category.title}</p>
+                {/* <p className="category-card__description">{category.description}</p> */}
               </div>
             ))}
           </div>

@@ -172,35 +172,30 @@
 
 @media (max-width: 768px) {
   .entrepreneur {
-    padding: 20px 0;
+    padding: 5px 1px; /* Added 16px horizontal padding */
   }
 
   .entrepreneur__container {
-    padding: 0 2px;
-    padding-left: 8px;
     height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 22px; /* Added 32px gap between all children */
   }
 
   .entrepreneur__logo {
     position: static !important;
     width: 112px;
     height: 67px;
-    margin: 0 auto 20px;
     display: flex !important;
-    order: 0;
     flex: none;
-    flex-grow: 0;
-    right: auto;
-    top: auto;
+
   }
 
   .entrepreneur__main-content {
     position: static;
-    width: 100%;
-    order: 1;
+    width: 110%;
     text-align: center;
   }
 
@@ -219,12 +214,10 @@
 
   .entrepreneur__buttons {
     position: static;
+    display: flex;
     flex-direction: column;
     gap: 12px;
-    order: 3;
     width: 100%;
-    left: auto;
-    top: auto;
   }
 
   .entrepreneur__buttons button {
@@ -236,37 +229,34 @@
     position: relative;
     width: 100%;
     height: auto;
-    padding: 15px;
-    padding-left: 12px;
-    order: 2;
-    text-align: center;
+    padding: 10px;
+    text-align: left;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    margin-left: -60px;
   }
 
   .entrepreneur-card::before {
     width: 4px;
     height: calc(100% - 32px);
-    left: auto;
     right: -8px;
     top: 16px;
-    display: block;
+    display: flex;
   }
 
   .entrepreneur-card::after {
     width: 3px;
     height: calc(100% - 58px);
-    left: auto;
     right: -14px;
     top: 29px;
-    display: block;
+    display: flex;
   }
 
   .entrepreneur-content {
     padding-right: 0;
     align-items: center;
     text-align: center;
-    order: 2;
   }
 
   .entrepreneur-question {
@@ -287,14 +277,14 @@
     position: static;
     width: 80px;
     height: 80px;
-    margin: 0 auto 16px;
-    order: 1;
+    margin: 0 auto 16px;  
+    order: -1;
   }
 
   .entrepreneur__author {
     font-size: 14px;
     line-height: 20px;
-    margin: 8px 0 0 0;
+    margin: 8px 0 0 2;
     text-align: center;
   }
 }

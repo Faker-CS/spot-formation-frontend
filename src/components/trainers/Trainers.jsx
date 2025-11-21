@@ -23,6 +23,17 @@ export default function Trainers() {
                 alt="Spot Formations"
               />
             </div>
+            <div className="trainers__video-grid">
+              <div className="trainers__video-item">
+                {/* Video placeholder 1 */}
+              </div>
+              <div className="trainers__video-item">
+                {/* Video placeholder 2 */}
+              </div>
+              <div className="trainers__video-item">
+                {/* Video placeholder 3 */}
+              </div>
+            </div>
           </div>
 
           <div className="trainers__right">
@@ -36,7 +47,7 @@ export default function Trainers() {
                 dans leur domaine, dotés d'une solide expérience pratique.
               </p>
               <p>
-                Au-delà de la transmission de connaissances,{" "}
+                Au-delà de la transmission de connaissances,{' '}
                 <strong>ils vous offrent un accompagnement personnalisé</strong>
                 , un coaching individualisé et un soutien constant tout au long
                 de votre parcours d'apprentissage, vous permettant ainsi de
@@ -44,21 +55,9 @@ export default function Trainers() {
                 objectifs professionnels.
               </p>
             </div>
-            <div className="trainers__button-container">
-              <Button variant="ghost">Enseigner chez nous</Button>
-            </div>
-          </div>
-        </div>
 
-        <div className="trainers__video-grid">
-          <div className="trainers__video-item">
-            {/* Video placeholder 1 */}
-          </div>
-          <div className="trainers__video-item">
-            {/* Video placeholder 2 */}
-          </div>
-          <div className="trainers__video-item">
-            {/* Video placeholder 3 */}
+                <Button variant="ghost" className="trainers__cta-btn">Enseigner chez nous</Button>
+
           </div>
         </div>
       </div>

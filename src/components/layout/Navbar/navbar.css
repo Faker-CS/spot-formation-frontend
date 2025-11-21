@@ -261,18 +261,72 @@
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     height: auto;
-    padding: 10px;
-    gap: 10px;
+    padding: 12px 20px;
+    gap: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 16px;
+    background: transparent;
+    z-index: 80;
   }
 
+  /* On small screens hide the inline menu and show hamburger */
   .navbar__menu {
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: none;
+  }
+
+  .navbar__hamburger {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    width: 100%;
-    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 60;
+  }
+
+  .hamburger {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #1b365e;
+    position: relative;
+    transition: transform 200ms ease-in-out;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: #ffffff;
+    transition: transform 200ms ease-in-out, top 200ms ease-in-out, bottom 200ms ease-in-out, opacity 200ms;
+  }
+
+  .hamburger::before { top: -6px; }
+  .hamburger::after { bottom: -6px; }
+
+  .hamburger.is-open {
+    background: transparent;
+  }
+
+  .hamburger.is-open::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .hamburger.is-open::after {
+    transform: rotate(-45deg);
+    bottom: 0;
   }
 
   .navbar__menu-btn {
@@ -283,4 +337,91 @@
   .navbar__actions {
     justify-content: center;
   }
+
+  /* Make logo smaller and white on top of hero */
+  .navbar img {
+    height: 28px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+}
+
+/* Mobile: force exact logo size requested */
+@media (max-width: 480px) {
+  .navbar img {
+    width: 152px;
+    height: 10px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
+}
+
+/* Drawer / mobile menu overlay */
+.navbar__drawer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 50;
+  transform: translateY(0);
+  transition: top 300ms ease, opacity 300ms ease;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__drawer--open {
+  top: 0;
+  opacity: 1;
+}
+
+.navbar__drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 20px;
+  border-bottom: 1px solid #eef6fb;
+}
+
+.navbar__drawer-header img { height: 28px; }
+
+.navbar__drawer-close {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.navbar__drawer-content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+
+.navbar__drawer-title {
+  margin: 0 0 12px 0;
+  color: #1b365e;
+  font-size: 18px;
+}
+
+.navbar__drawer-list { list-style: none; padding: 0; margin: 0 0 18px 0; }
+.navbar__drawer-list li { margin-bottom: 10px; }
+.navbar__drawer-list a { display: block; padding: 12px 14px; border-radius: 12px; background: #fff; color: #1b365e; text-decoration: none; font-weight: 700; }
+.navbar__drawer-list a.highlight { background: #fff3e0; }
+.navbar__drawer-list a.contact-cta { background: #ffe4b4; }
+
+.navbar__drawer-sections { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+.drawer-section { text-align: left; padding: 12px; border-radius: 12px; background: #fff; border: 1px solid #f0f0f0; }
+
+.navbar__drawer-footer { padding: 12px 20px 28px 20px; border-top: 1px solid #eef6fb; }
+.drawer-footer-row { display:flex; justify-content: space-between; align-items: center; padding-bottom: 8px; color: #1b365e; }
+.drawer-phone { font-weight: 700; }
+.drawer-lang { margin-top: 6px; color: #6b6b6b; }
+
+/* Make sure hamburger is hidden on larger than mobile */
+@media (min-width: 769px) {
+  .navbar__hamburger { display: none; }
+  .navbar__drawer { display: none; }
 }
