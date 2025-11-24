@@ -35,7 +35,7 @@ export default function Advantages() {
           </p>
           <div className="advantages__rating">
             <img
-              src="public/assets/badges/Evalutation2.png"
+              src="/assets/badges/Evalutation2.png"
               alt="5 étoiles"
               className="advantages__rating-icon"
             />
@@ -57,43 +57,43 @@ export default function Advantages() {
 
         <div className="advantages__journey">
           <img
-            src="/public/assets/images/01.png"
+            src="/assets/images/01.png"
             alt="Orientation & Test de niveau"
             className="advantages__journey-step advantages__journey-step-1"
           />
 
           <img
-            src="/public/assets/images/02.png"
+            src="/assets/images/02.png"
             alt="Orientation & Test de niveau"
             className="advantages__journey-step advantages__journey-step-2"
           />
 
           <img
-            src="/public/assets/images/03.png"
+            src="/assets/images/03.png"
             alt="Orientation & Test de niveau"
             className="advantages__journey-step advantages__journey-step-3"
           />
 
           <img
-            src="/public/assets/images/04.png"
+            src="/assets/images/04.png"
             alt="Orientation & Test de niveau"
             className="advantages__journey-step advantages__journey-step-4"
           />
 
           <img
-            src="/public/assets/images/05.png"
+            src="/assets/images/05.png"
             alt="Orientation & Test de niveau"
             className="advantages__journey-step advantages__journey-step-5"
           />
 
           <img
-            src="/public/assets/images/Group-13.png"
+            src="/assets/images/Group-13.png"
             alt="Decoration"
             className="advantages__journey-decoration"
           />
 
           <img
-            src="/public/assets/images/Ellipse-13.png"
+            src="/assets/images/Ellipse-13.png"
             alt="Decoration"
             className="advantages__journey-ellipse"
           />

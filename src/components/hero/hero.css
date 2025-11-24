@@ -1,32 +1,38 @@
-/* Hero Image Container - participate in normal document flow */
+/* Hero Image Container */
 .hero {
   position: relative;
   width: 100%;
   min-height: 560px;
   overflow: hidden;
+  color: #ffffff;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* Background Solid */
 .hero__background {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  min-height: 560px;
-  overflow: hidden;
-  background: url("/public/assets/images/Hero-bg-1024.png");
+  min-height: 640px;
+  padding: 32px 64px 140px;
   background-color: #1b365e;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
+  /* Hero background image as <img> */
 }
-
-/* Add white gradient overlay on the left side */
+.hero__bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+}
+/* Gradient overlay */
 .hero__background::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 60%;
-  height: 100%;
+  inset: 0;
   z-index: 1;
   pointer-events: none;
 }
@@ -40,32 +46,26 @@
   background: rgba(27, 54, 94, 0.3);
 }
 
-/* Photo Hero Container */
-.hero__photo {
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
+.hero__title {
+  font-size: 48px;
+  line-height: 56px;
+  margin: 0;
 }
 
-/* Gradient Overlay */
-.hero__gradient-overlay {
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  background: linear-gradient(
-    260.63deg,
-    #40bfde 1.01%,
-    rgba(35, 103, 120, 0.4) 69.22%
-  );
+.hero__subtitle {
+  font-size: 18px;
+  line-height: 26px;
+  margin: 0;
+  letter-spacing: 0.02em;
 }
 
+.hero__description {
+  font-size: 16px;
+  line-height: 26px;
+  margin: 0;
+  color: #f5f7fb;
+}
 
-
-/* Buttons Container */
 .hero__buttons {
   position: absolute;
   bottom: 120px;
@@ -95,49 +95,35 @@
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.02em;
-  color: #ffffff;
+  /* color: #ffffff; */
   transition: all 0.2s ease;
 }
 
-.hero__btn-secondary:hover {
-  background: #2a4670;
-  transform: translateY(-2px);
-}
-
-/* Primary CTA Button */
 .hero__btn-primary {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 40px;
-  gap: 10px;
-
   background: linear-gradient(180deg, #ffbc41 0%, #ff5758 100%);
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 0.02em;
   color: #ffffff;
-  transition: all 0.2s ease;
 }
 
-.hero__btn-primary:hover {
-  opacity: 0.9;
+.hero__btn-secondary {
+  background: #1b365e;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+}
+
+.hero__btn-primary:hover,
+.hero__btn-secondary:hover {
   transform: translateY(-2px);
 }
 
-/* Evaluation Badge */
 .hero__evaluation {
-  display: flex;
-  flex-direction: row;
+  margin-top: 32px;
+  padding: 16px 20px;
+  background: rgba(27, 81, 94, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 45px rgba(7, 20, 40, 0.35);
+  border-radius: 16px;
+  display: inline-flex;
   align-items: center;
   padding: 8px;
   gap: 12px;
@@ -147,8 +133,6 @@
   background: #1b515e;
   border-radius: 8px;
 }
-
-
 
 /* Evaluation Icon */
 .hero__eval-icon {
@@ -176,58 +160,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
-  align-content: center;
-  padding: 0px;
-  gap: 4px;
-  width: 122px;
+  width: fit-content;
 }
 
-/* Individual Star */
-.hero__star {
-  width: 19.89px;
-  height: 19.89px;
-  background: #ffbc42;
-  border-radius: 1px;
-  flex: none;
-  flex-grow: 0;
-}
-
-/* Evaluation Text */
-.hero__eval-text {
-  width: 122px;
-  height: 34px;
-
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  margin: 4px 0 0 0;
-
-  flex: none;
-  order: 5;
-  flex-grow: 0;
-}
-
-/* Qualiopi Logo */
-.hero__qualiopi {
-  width: 97px;
-  height: 36px;
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-}
-
-.hero__qualiopi img {
-  width: 97px;
-  height: 51px;
-  object-fit: contain;
+.hero__evaluation img {
+  display: block;
+  height: auto;
+  width: 100%;
+  max-width: 220px;
 }
 
 /* Floating logo that bridges the hero and following section */
@@ -238,45 +178,58 @@
   justify-content: center;
   padding: 8px 10px;
   gap: 10px;
-
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -28px; /* overlaps the bottom edge of the hero */
+  bottom: -28px;
   z-index: 50;
-
   width: 65px;
   height: 45px;
   background: #ffffff;
-  border-bottom: 1px solid #40BFDE;
+  border-bottom: 1px solid #40bfde;
   border-radius: 40px;
 }
 
-.hero__logo img { width: 100%; height: auto; }
+.hero__logo img {
+  width: 100%;
+  height: auto;
+}
 
-/* Responsive adjustments */
-@media (max-width: 1440px) {
-  .hero {
-    width: 100%;
-    left: 0;
+@media (max-width: 1024px) {
+  .hero__background {
+    padding: 24px 40px 120px;
+  }
+
+  .hero__content {
+    margin-top: 120px;
   }
 }
 
 @media (max-width: 768px) {
   .hero,
   .hero__background {
-    height: 400px;
+    min-height: 0;
+    padding: 24px 24px 110px;
   }
 
-  .hero__title,
-  .hero__title-line2 {
-    font-size: 40px;
-    line-height: 50px;
+  .hero__content {
+    margin-top: 96px;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero__title {
+    font-size: 32px;
+    line-height: 40px;
   }
 
   .hero__subtitle {
-    font-size: 16px;
-    line-height: 24px;
+    width: 358px;
+    height: 90px;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
   }
 
   .hero__description {
@@ -285,51 +238,122 @@
   }
 
   .hero__buttons {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    top: auto;
-    justify-content: center;
-    margin-top: 20px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__buttons button {
+    width: 100%;
   }
 
   .hero__evaluation {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    margin-top: 20px;
+    width: 100%;
+    max-width: 360px;
   }
 }
 
-/* Very small screens: set hero background height to 193px and adjust small spacing */
 @media (max-width: 480px) {
+  .hero__background {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 655px;
+    background-color: #1b365e;
+  }
+  .hero__bg-img {
+    position: absolute;
+    width: auto;
+    height: 193px;
+    left: 50%;
+    top: 15%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    margin-bottom: 0;
+    order: 2;
+  }
+  .hero__content {
+    order: 1;
+    z-index: 1;
+  }
+  .hero__background {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+  }
   .hero,
   .hero__background {
-    height: 193px;
-    min-height: 193px;
+    padding: 20px 16px 100px;
+    background-position: 65% center;
+  }
+
+  .hero__content {
+    margin-top: 72px;
+    gap: 16px;
+  }
+
+  .hero__title {
+    font-size: 30px;
+    line-height: 37px;
+    letter-spacing: 0.03em;
+    width: 358px;
+    height: 111px;
+    padding-left: 10px;
+    text-align: start;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .hero .hero__subtitle {
+    width: 358px;
+    height: 90px;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    text-align: start;
+    padding-left: 5px;
+    font-weight: 500;
+    position: relative;
+    top: 125px;
+  }
+
+  .hero .hero__description {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    width: 358px;
+    height: 119px;
+    text-align: start;
+    padding-left: 4px;
+    padding-top: 10px;
+    position: relative;
+    top: 128px;
   }
 
   .hero__buttons {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    top: auto;
-    justify-content: center;
-    margin-top: 8px;
-    gap: 12px;
+    align-items: flex-start;
+    width: 90%;
+    gap: 14px;
+    bottom: 80px;
+    left: 20px;
   }
 
-  .hero__evaluation {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    padding: 6px 8px;
-    gap: 8px;
+  .hero .hero__evaluation {
+    margin-top: 10px;
+    bottom: 8px;
+    right: 23px;
+    width: 332px;
+    height: 63.89px;
+    margin-bottom: 1px;
+
   }
 
   .hero__logo {
-    bottom: -18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    bottom: -19px;
     width: 56px;
     height: 36px;
   }

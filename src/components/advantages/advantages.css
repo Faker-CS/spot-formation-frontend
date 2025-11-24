@@ -143,6 +143,7 @@
   margin-top: 70px;
   position: relative;
   min-height: 700px;
+  z-index: 0;
 }
 
 .advantages__journey::before {
@@ -159,17 +160,6 @@
   background-size: contain;
   z-index: 0;
   pointer-events: none;
-}
-
-
-.advantages__journey-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  flex: 1;
-  position: relative;
-  z-index: 1;
 }
 
 .advantages__journey-icon {
@@ -278,7 +268,6 @@
 
   position: relative;
   z-index: 3;
-
 }
 
 /* Positioned logo */
@@ -301,7 +290,6 @@
   z-index: 6;
 }
 
-
 @media (max-width: 1024px) {
   .advantages__grid {
     flex-wrap: wrap;
@@ -318,17 +306,24 @@
     text-align: center;
   }
 
-  .advantages__journey {
-    flex-wrap: wrap;
-    gap: 60px;
+  .advantages__journey::before {
+    width: 100%;
+    max-width: 1400px;
+    height: 290px;
+    background-image: url("/assets/images/vector-3.png");
+    /* background-size: cover; */
+    /* background-position: center ; */
+    
   }
 
-  .advantages__journey::before {
-    display: none;
-  }
+  
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    .advantages__journey {
+      position: static !important;
+      /* background-image: none !important; */
+    }
   .advantages {
     padding: 20px 0;
     height: auto;
@@ -414,14 +409,6 @@
     align-items: center;
   }
 
-  .advantages__journey::before {
-    width: 100px;
-    height: 800px;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%) rotate(90deg);
-    background-size: contain;
-  }
 
   .advantages__journey-step {
     position: static !important;
@@ -464,7 +451,6 @@
 
   .advantages__cta button {
     width: 100%;
-
   }
 
   .advantages__financement {
@@ -477,8 +463,12 @@
     line-height: 18px;
     color: #1d1d1d;
     display: flex;
-    align-items: center;
-    gap: 8px;
+  }
+  .advantages__journey {
+    /* flex-wrap: wrap; */
+    gap: 60px;
+    background-image: url("../../../public/assets/images/vector-3.png");
+    /* background-position: right; */
   }
 
   .advantages__logo {
@@ -489,4 +479,5 @@
     transform: none;
     padding-bottom: 70px;
   }
+
 }

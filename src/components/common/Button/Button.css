@@ -49,6 +49,14 @@
   transition: all 0.2s ease;
 }
 
+.btn--primary.hero__btn-secondary {
+  border: 1px solid #efefef;
+}
+
+.btn--primary.hero__btn-secondary:hover {
+  border: 1px solid #40bfde;
+}
+
 .hero__btn-secondary:hover {
   background: #c7f8ff;
   border: 1px solid #40bfde;
