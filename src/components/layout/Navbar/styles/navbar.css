@@ -466,8 +466,8 @@
 }
 
 .drawer-link--soft {
-  background: #f5f6fb;
-  border-color: #f5f6fb;
+  background: #efefef;
+  border-color: #d3d4da;
 }
 
 .drawer-link--highlight {
@@ -484,6 +484,7 @@
 .drawer-link--action {
   cursor: pointer;
   text-align: left;
+  width: 100%; 
 }
 
 .navbar__drawer-sections {
@@ -530,16 +531,15 @@
   width: 25px;
   height: 25px;
   border-radius: 16px;
-  background: #fff4ea;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 14px;
 }
 
-.drawer-section--bookmark .drawer-section__icon {
-  background: #ffe9e1;
-}
+/* .drawer-section--bookmark .drawer-section__icon {
+  border: 1.5px solid #f2f2f2;
+} */
 
 .drawer-section__label {
   flex: 1;
@@ -621,7 +621,6 @@
   right: 0;
   bottom: 0;
   width: 100%;
-  max-width: 420px;
   background: #f7f9ff;
   z-index: 90;
   transform: translateX(100%);
@@ -657,18 +656,23 @@
   cursor: pointer;
 }
 
+.subdrawer-back svg {
+  width: 24px;
+  height: 24px;
+}
+
 .subdrawer-title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   font-weight: 700;
   color: #1b365e;
   font-size: 15px;
 }
 
 .subdrawer-title img {
-  height: 20px;
+  height: 24px;
 }
 
 .navbar__subdrawer-body {
@@ -694,7 +698,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 18px;
-  border-radius: 18px;
+  border-radius: 28px;
   border: 1px solid #e4ebf6;
   background: #ffffff;
   color: #1b365e;
@@ -707,12 +711,14 @@
 .subdrawer-ctas {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 32px;
+  margin-top: auto;
 }
 
 .subdrawer-ctas .btn {
   width: 100%;
   justify-content: center;
+  height: 58px;
 }
 
 @media (max-width: 420px) {

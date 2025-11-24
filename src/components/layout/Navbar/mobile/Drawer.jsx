@@ -60,20 +60,9 @@ export default function Drawer({
             <button key={key} type="button" className={`drawer-section drawer-section--${variant}`}>
               <span className="drawer-section__icon" aria-hidden="true">
                 {variant === "account" ? (
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <circle cx="16" cy="12" r="5.25" stroke="#FC7F16" strokeWidth="1.8" />
-                    <path d="M6 26C6 20.4772 10.4772 16 16 16C21.5228 16 26 20.4772 26 26" stroke="#FC7F16" strokeWidth="1.8" strokeLinecap="round" />
-                  </svg>
+                  <img src="assets/icons/icon-monCompte.svg" alt="icon-monCompte" width="32" height="32" />
                 ) : (
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M6 4.5C6 3.67157 6.67157 3 7.5 3H16.5C17.3284 3 18 3.67157 18 4.5V21L12 17.25L6 21V4.5Z"
-                      stroke="#EB5A2D"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <img src="/assets/icons/icon-bookmark.svg" width="32" height="32" alt="Bookmark" />
                 )}
               </span>
               <span className="drawer-section__label">{label}</span>

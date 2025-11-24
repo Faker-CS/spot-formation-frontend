@@ -68,7 +68,7 @@
 
 .hero__buttons {
   position: absolute;
-  bottom: 120px;
+  bottom: 80px;
   left: 40px;
   display: flex;
   gap: 20px;
@@ -132,6 +132,7 @@
   bottom: 120px;
   background: #1b515e;
   border-radius: 8px;
+  z-index: 1;
 }
 
 /* Evaluation Icon */
@@ -167,7 +168,7 @@
   display: block;
   height: auto;
   width: 100%;
-  max-width: 220px;
+  max-width: 307px;
 }
 
 /* Floating logo that bridges the hero and following section */
@@ -181,8 +182,8 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -28px;
-  z-index: 50;
+  top: -22px;
+  z-index: 9999;
   width: 65px;
   height: 45px;
   background: #ffffff;
@@ -336,25 +337,31 @@
     align-items: flex-start;
     width: 90%;
     gap: 14px;
-    bottom: 80px;
+    bottom: 110px;
     left: 20px;
   }
 
   .hero .hero__evaluation {
     margin-top: 10px;
-    bottom: 8px;
-    right: 23px;
-    width: 332px;
-    height: 63.89px;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 78px;
     margin-bottom: 1px;
 
   }
 
+  .hero__evaluation img {
+    max-width: 100%;
+  }
+
   .hero__logo {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    bottom: -19px;
+    bottom: -39px;
     width: 56px;
     height: 36px;
+    z-index: 99;
   }
 }

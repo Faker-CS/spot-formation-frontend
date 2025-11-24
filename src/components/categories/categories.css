@@ -5,6 +5,7 @@
   background: #ffffff;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .categories__container {
@@ -22,12 +23,37 @@
   line-height: 70px;
   text-align: center;
   color: #1b365e;
-  margin: 15px 0 15px 0;
+  margin: 5px 0 15px 0;
   position: static !important;
   left: auto !important;
   right: auto !important;
   top: auto !important;
   bottom: auto !important;
+}
+
+/* Floating logo */
+.categories__logo {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -100px;
+  z-index: 9;
+  width: 65px;
+  height: 41px;
+  background: #ffffff;
+  border-bottom: 1px solid #40bfde;
+  border-radius: 40px;
+}
+
+.categories__logo img {
+  width: 100%;
+  height: auto;
 }
 
 .category-card__text {

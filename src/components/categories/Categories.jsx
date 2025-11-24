@@ -145,6 +145,11 @@ export default function Categories() {
           />
         </div>
       </div>
+
+      {/* Floating logo */}
+      <div className="categories__logo">
+        <img src="/vector.svg" alt="Spot Formations" />
+      </div>
     </section>
   );
 }

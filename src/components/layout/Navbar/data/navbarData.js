@@ -5,7 +5,7 @@ export const NAVBAR_LINKS = [
   { href: "#methode", label: "Méthode" },
   { href: "#rejoindre", label: "Nous rejoindre", variant: "soft" },
   { href: "#enseigner", label: "Enseigner chez nous", variant: "soft" },
-  { href: "#contact", label: "Nous contacter", variant: "highlight" },
+  // { href: "#contact", label: "Nous contacter", variant: "highlight" },
 ];
 
 export const NAVBAR_ACTIONS = [
@@ -36,7 +36,7 @@ export const SUB_DRAWERS = {
         id: "financement",
         label: "Être accompagné dans mon financement",
         href: "#financement",
-        className: "hero__btn-secondary",
+        className: "btn--ghost",
       },
     ],
   },
