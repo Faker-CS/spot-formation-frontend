@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./hero.css";
 import Navbar from "../layout/Navbar/Navbar";
 import { H1, P } from "../common/Typography";
 import { H6 } from "../common/Typography/Typography";
 import Button from "../common/Button";
+import Modal from "../common/Modal/Modal";
+import Form from "../common/Form/Form";
+import ModalForm from "../common/Modal/ModalForm";
+
 function Hero() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section className="hero hero__background">
       <img className="hero__bg-img" src="/assets/images/Hero-bg-1024.png" alt="Hero background" />
@@ -26,7 +32,9 @@ function Hero() {
 
         <div className="hero__buttons">
           <Button className="hero__btn-primary">Choisir votre formation</Button>
-          <Button className="hero__btn-secondary">Se laisser guider</Button>
+          <Button className="hero__btn-secondary" onClick={() => setShowModal(true)}>
+            Se laisser guider
+          </Button>
         </div>
 
         <div className="hero__evaluation">
@@ -36,6 +44,11 @@ function Hero() {
           />
         </div>
       </div>
+
+      {/* Modal */}
+      <Modal open={showModal} onClose={() => setShowModal(false)}>
+        <ModalForm />
+      </Modal>
     </section>
   );
 }

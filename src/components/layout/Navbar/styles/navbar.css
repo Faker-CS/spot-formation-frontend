@@ -80,9 +80,35 @@
   background: #f5f5f5;
 }
 
+.navbar__menu-btn:active {
+  background: #d9d9d9;
+  border: 1px solid #40bfde;
+  border-radius: 24px;
+}
+
 /* Active state (Nous rejoindre) */
 .navbar__menu-btn--active {
-  background: #efefef;
+  background: #1b515e;
+  border-radius: 24px;
+  color: #ffffff;
+}
+
+.navbar__menu-btn--highlight:hover {
+  background: #c7f8ff;
+  border-radius: 24px;
+  color: #1b365e;
+}
+
+.navbar__menu-btn--highlight:active {
+  background: #1b365e;
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.navbar__menu-btn--highlight:focus {
+  background: #d9d9d9;
+  border: 1px solid #40bfde;
+  border-radius: 16px;
 }
 
 /* Secondary button (Enseigner chez nous) */
@@ -90,6 +116,19 @@
   background: #efefef;
   border-radius: 28px;
   color: #1b515e;
+}
+
+.navbar__menu-btn--secondary:active {
+  background: #d9d9d9;
+  border: 1px solid #40bfde;
+  border-radius: 24px;
+  color: #1b515e;
+}
+
+.navbar__menu-btn--secondary:hover {
+  background: #c7f8ff;
+  border-radius: 24px;
+  color: #1b365e;
 }
 
 /* Liste Container */
@@ -128,7 +167,7 @@
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 11.9px;
   line-height: 14px;
   letter-spacing: 0.02em;
   color: #1b365e;
@@ -142,6 +181,13 @@
 
 .navbar__contact-btn:hover {
   background: #ffd89b;
+  color: #1b365e;
+}
+
+.navbar__contact-btn:active {
+  background: #fc7f16;
+  border-radius: 24px;
+  color: #ffffff;
 }
 
 /* Divider */
@@ -178,7 +224,18 @@
 }
 
 .navbar__account-btn:hover {
-  background: #f5f5f5;
+  background: #ffe4b4;
+  background-image: linear-gradient(#ffe4b4, #ffe4b4),
+    linear-gradient(180deg, #ffbc41 26%, #ff5758 100%);
+}
+
+.navbar__account-btn:active {
+  background: #fc7f16;
+  background-image: none;
+}
+
+.navbar__account-btn:active path {
+  stroke: #ffffff;
 }
 
 /* Icon MonCompte */
@@ -295,7 +352,7 @@
     display: block;
     width: 24px; /* Increase from 20px */
     height: 2px;
-    background: #ffffff; 
+    background: #ffffff;
     position: relative;
     transition: background 200ms ease-in-out, transform 200ms ease-in-out;
   }
@@ -356,7 +413,7 @@
 
 /* Mobile: force exact logo size requested */
 @media (max-width: 480px) {
-  .navbar{
+  .navbar {
     top: -1px;
   }
   .navbar img {
@@ -470,11 +527,6 @@
   border-color: #d3d4da;
 }
 
-.drawer-link--highlight {
-  background: #ffe4b4;
-  border-color: #fecb89;
-}
-
 .drawer-link__arrow {
   display: flex;
   align-items: center;
@@ -484,7 +536,7 @@
 .drawer-link--action {
   cursor: pointer;
   text-align: left;
-  width: 100%; 
+  width: 100%;
 }
 
 .navbar__drawer-sections {
@@ -656,9 +708,11 @@
   cursor: pointer;
 }
 
-.subdrawer-back svg {
+.subdrawer-back img {
   width: 24px;
   height: 24px;
+  display: block;
+  margin: 0 auto;
 }
 
 .subdrawer-title {

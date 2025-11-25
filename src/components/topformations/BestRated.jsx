@@ -121,7 +121,7 @@ export default function BestRated({
                   #{formation.rank}
                 </div>
                 <div className="top-formations__stars">
-                  <span>{formation.rating}</span>
+                  <span style={{color:"#1B365E"}}>{formation.rating}</span>
                   <img
                     src="../src/assets/icons/icon-star.svg"
                     alt="étoiles"

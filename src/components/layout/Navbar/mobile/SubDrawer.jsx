@@ -8,17 +8,12 @@ export default function SubDrawer({ config, isOpen, onBack, onClose }) {
     <div className={`navbar__subdrawer ${isOpen ? "navbar__subdrawer--open" : ""}`} aria-hidden={!isOpen}>
       <div className="navbar__subdrawer-header">
         <button className="subdrawer-back" aria-label="Retour au menu" type="button" onClick={onBack}>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M12.5 15L7.5 10L12.5 5" stroke="#1B365E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <img src="/src/assets/icons/arrows/Back_arrow.svg" alt="Retour" style={{ width: 24, height: 24, display: 'block', margin: '0 auto' }} />
         </button>
         <div className="subdrawer-title">
           <img src="/assets/images/logo-SF-H_blue.svg" alt="Spot Formations" />
           <span>{config.title}</span>
         </div>
-        <button className="subdrawer-close" aria-label="Fermer la section" type="button" onClick={onClose}>
-          ✕
-        </button>
       </div>
 
       <div className="navbar__subdrawer-body">

@@ -343,11 +343,11 @@
 
   .hero .hero__evaluation {
     margin-top: 10px;
-    bottom: 24px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    height: 78px;
+    height: 63.89px;
     margin-bottom: 1px;
 
   }
