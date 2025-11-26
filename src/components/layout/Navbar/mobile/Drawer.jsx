@@ -1,5 +1,6 @@
 import React from "react";
 import SubDrawer from "./SubDrawer";
+import globeSolid from "../../../../../src/assets/svgs/globe-solid-2.svg";
 
 export default function Drawer({
   open,
@@ -89,15 +90,7 @@ export default function Drawer({
 
         <button type="button" className="drawer-lang">
           <span className="drawer-lang__icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" stroke="#C7F8FF" strokeWidth="1.4" />
-              <path d="M3 12H21" stroke="#C7F8FF" strokeWidth="1.4" strokeLinecap="round" />
-              <path
-                d="M12 3C14.4853 5.82843 15.7279 8.91421 15.7279 12C15.7279 15.0858 14.4853 18.1716 12 21C9.51472 18.1716 8.27208 15.0858 8.27208 12C8.27208 8.91421 9.51472 5.82843 12 3Z"
-                stroke="#C7F8FF"
-                strokeWidth="1.4"
-              />
-            </svg>
+            <img src={globeSolid} alt="Language Icon" />
           </span>
           <span>Français (FR)</span>
         </button>

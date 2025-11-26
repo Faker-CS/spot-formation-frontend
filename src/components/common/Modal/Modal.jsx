@@ -35,7 +35,7 @@ export default function Modal({ open, onClose, children }) {
           type="button"
         >
           <img
-            src="/src/assets/icons/close/icon_close.svg"
+            src="/src/assets/icons/icon_close.svg"
             alt=""
             draggable="false"
           />
