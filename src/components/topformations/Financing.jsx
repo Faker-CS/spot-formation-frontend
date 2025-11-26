@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Card from "../common/card";
+import FinancingCard from "../common/FinancingCard/FinancingCard";
+import mockFinancing from "../../data/mockFinancing";
 import DotNavigation from "../common/DotNavigation";
 import Button from "../common/Button";
 
@@ -11,47 +13,51 @@ export default function Financing({
   handleBookmark,
   handleDiscover,
 }) {
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  
+  const [financingIndex, setFinancingIndex] = useState(0);
+  const [touchStartF, setTouchStartF] = useState(0);
+  const [touchEndF, setTouchEndF] = useState(0);
+  const finTrackRef = useRef(null);
 
-  const visibleFormations = formations.slice(currentIndex, currentIndex + 4);
+  useEffect(() => {
+    if (!finTrackRef.current) return;
+    const track = finTrackRef.current;
+    const card = track.querySelector('.top-formations__card-wrapper');
+    const gapStyle = getComputedStyle(track).gap || '16px';
+    const gap = parseInt(gapStyle, 10) || 16;
+    const cardWidth = card ? card.offsetWidth + gap : 0;
+    track.scrollTo({ left: financingIndex * cardWidth, behavior: 'smooth' });
+  }, [financingIndex]);
 
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX);
+  
+
+  const handleTouchStartFin = (e) => {
+    setTouchStartF(e.targetTouches[0].clientX);
   };
 
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+  const handleTouchMoveFin = (e) => {
+    setTouchEndF(e.targetTouches[0].clientX);
   };
 
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+  const handleTouchEndFin = () => {
+    if (!touchStartF || !touchEndF) return;
 
-    const distance = touchStart - touchEnd;
+    const distance = touchStartF - touchEndF;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
 
-    if (isLeftSwipe && currentIndex < formations.length - 1) {
-      handleNext();
+    if (isLeftSwipe && financingIndex < mockFinancing.length - 1) {
+      setFinancingIndex((s) => s + 1);
     }
-    if (isRightSwipe && currentIndex > 0) {
-      handlePrev();
+    if (isRightSwipe && financingIndex > 0) {
+      setFinancingIndex((s) => s - 1);
     }
 
-    setTouchStart(0);
-    setTouchEnd(0);
+    setTouchStartF(0);
+    setTouchEndF(0);
   };
 
-  const handleCardClick = (index) => {
-    const actualIndex = formations.findIndex(
-      (f) => f.id === formations[index]?.id
-    );
-    if (actualIndex > currentIndex) {
-      handleNext();
-    } else if (actualIndex < currentIndex) {
-      handlePrev();
-    }
-  };
+  
 
   return (
     <>
@@ -61,18 +67,21 @@ export default function Financing({
         situations. Optimisez le financement de votre formation selon votre
         contexte.
       </p>
-      <div className="top-formations__cards-section">
-        <div className="top-formations__nav-arrows top-formations__nav-arrows--desktop">
+      <div className="top-formations__financing-row">
+        <div className="top-formations__financing-grid">
+          {mockFinancing.map((f) => (
+            <FinancingCard key={f.id} item={f} />
+          ))}
+        </div>
+
+        <div className="top-formations__nav-arrows top-formations__nav-arrows--financing">
           <button
             className="top-formations__nav-btn top-formations__nav-btn--next"
             aria-label="Suivant"
             onClick={handleNext}
             disabled={currentIndex + 4 >= formations.length}
           >
-            <img
-              src="../src/assets/icons/arrows/arrow-blue.svg"
-              alt="Suivant"
-            />
+            <img src="../src/assets/icons/arrows/arrow-blue.svg" alt="Suivant" />
           </button>
           <button
             className="top-formations__nav-btn top-formations__nav-btn--prev"
@@ -80,102 +89,39 @@ export default function Financing({
             onClick={handlePrev}
             disabled={currentIndex === 0}
           >
-            <img
-              src="../src/assets/icons/arrows/arrow-grey.svg"
-              alt="Précédent"
-            />
+            <img src="../src/assets/icons/arrows/arrow-grey.svg" alt="Précédent" />
           </button>
         </div>
+      </div>
+      <div className="top-formations__cards-section">
 
         <div className="top-formations__cards-container">
-          <div className="top-formations__cards top-formations__cards--desktop">
-            {visibleFormations.map((formation) => (
-              <div key={formation.id} className="top-formations__card-wrapper">
-                <div
-                  className={`top-formations__rank ${
-                    formation.rank > 1 ? "top-formations__rank--blue" : ""
-                  }`}
-                >
-                  #{formation.rank}
-                </div>
-                <div className="top-formations__stars">
-                  <span>{formation.rating}</span>
-                  <img src="../src/assets/icons/icon-star.svg" alt="étoiles" />
-                </div>
-                <Card
-                  category={formation.category}
-                  title={formation.title}
-                  location={formation.location}
-                  description={formation.description}
-                  price={formation.price}
-                  financing={formation.financing}
-                  onBookmark={() => handleBookmark(formation.id)}
-                  onDiscover={() => handleDiscover(formation.id)}
-                />
-              </div>
-            ))}
-          </div>
 
           {/* Mobile Carousel */}
           <div
             className="top-formations__cards--mobile"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
+            onTouchStart={handleTouchStartFin}
+            onTouchMove={handleTouchMoveFin}
+            onTouchEnd={handleTouchEndFin}
           >
-            <div className="top-formations__cards-track">
-              {/* {formations.map((formation, index) => (
-                <div
-                  key={formation.id}
-                  className={`top-formations__card-wrapper ${
-                    index === currentIndex ? "active" : ""
-                  }`}
-                  style={{
-                    transform: `translateX(-${currentIndex * 100}%)`,
-                    transition: "transform 0.3s ease-in-out",
-                  }}
-                  onClick={() => handleCardClick(index)}
-                >
+              <div className="top-formations__cards-track" ref={finTrackRef}>
+                {mockFinancing.map((f, index) => (
                   <div
-                    className={`top-formations__rank ${
-                      formation.rank > 1 ? "top-formations__rank--blue" : ""
+                    key={f.id}
+                    className={`top-formations__card-wrapper ${
+                      index === financingIndex ? "active" : ""
                     }`}
                   >
-                    #{formation.rank}
+                    <FinancingCard item={f} />
                   </div>
-                  <div className="top-formations__stars">
-                    <span>{formation.rating}</span>
-                    <img
-                      src="../src/assets/icons/icon-star.svg"
-                      alt="étoiles"
-                    />
-                  </div>
-                  <Card
-                    category={formation.category}
-                    title={formation.title}
-                    location={formation.location}
-                    description={formation.description}
-                    price={formation.price}
-                    financing={formation.financing}
-                    onBookmark={() => handleBookmark(formation.id)}
-                    onDiscover={() => handleDiscover(formation.id)}
-                  />
-                </div>
-              ))} */}
-            </div>
+                ))}
+              </div>
 
-            <DotNavigation
-              total={formations.length}
-              current={currentIndex}
-              onDotClick={(index) => {
-                const diff = index - currentIndex;
-                if (diff > 0) {
-                  for (let i = 0; i < diff; i++) handleNext();
-                } else if (diff < 0) {
-                  for (let i = 0; i < Math.abs(diff); i++) handlePrev();
-                }
-              }}
-            />
+              <DotNavigation
+                total={mockFinancing.length}
+                current={financingIndex}
+                onDotClick={(index) => setFinancingIndex(index)}
+              />
           </div>
         </div>
 

@@ -1,0 +1,125 @@
+.financing-card {
+  border: 1px solid #e6eef6;
+  border-radius: 10px;
+  padding: 16px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 223px;
+  height: 320px;
+  box-shadow: 0 4px 12px rgba(27,54,94,0.04);
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.financing-card__header {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.financing-card__title-col h4 {
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  font-size: 18px;
+  color: #163054;
+  white-space: nowrap;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.financing-card__subtitle {
+  display: block;
+  font-size: 13px;
+  color: #163054;
+}
+
+.financing-card__logo-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.financing-card__logo-center img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+}
+
+.financing-card__desc {
+  margin: 6px 0 0 0;
+  font-size: 13px;
+  color: #26343f;
+  line-height: 1.5;
+  min-height: 80px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.financing-card__divider {
+  height: 1px;
+  background: #e6eef6;
+  margin: 12px 0;
+}
+
+.financing-card__cta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #163054;
+  font-weight: 600;
+  text-decoration: none;
+  justify-content: center;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.financing-card__cta-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e9f9ff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.financing-card__cta-label {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.financing-card__cta:hover .financing-card__cta-icon {
+  background: #f4fbff;
+}
+
+.financing-card__cta img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  padding: 4px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.financing-card__cta:hover img {
+  background: #f4fbff;
+}
+
+.financing-card__cta-label {
+  color: #163054;
+}
+
+@media (max-width: 768px) {
+  .financing-card {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}

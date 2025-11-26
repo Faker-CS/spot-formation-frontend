@@ -112,6 +112,73 @@
   margin: 0 auto;
   max-width: 900px;
 }
+/* Financing grid (cards displayed as columns) */
+.top-formations__financing-grid {
+  /* Desktop: single horizontal row of fixed-size cards */
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding-left: 16px; /* left space requested */
+  margin: 24px 0 0 0;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.top-formations__financing-row {
+  position: relative;
+}
+
+.top-formations__nav-arrows--financing {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+/* ensure buttons look consistent when placed over financing row */
+.top-formations__nav-arrows--financing .top-formations__nav-btn img {
+  width: 32px;
+  height: 64px;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .top-formations__financing-grid {
+    gap: 16px;
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile: stack vertically */
+  /* hide desktop grid on mobile - we'll use the mobile carousel */
+  .top-formations__financing-grid {
+    display: none !important;
+  }
+
+  /* hide financing-row arrows on mobile */
+  .top-formations__nav-arrows--financing {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  /* ensure financing grid shows on desktop */
+  .top-formations__financing-grid {
+    display: flex !important;
+  }
+  /* hide mobile carousel on desktop */
+  .top-formations__cards--mobile {
+    display: none !important;
+  }
+}
 
 .top-formations__link {
   color: #1b365e;
@@ -389,6 +456,19 @@
   width: 100%;
   position: relative;
   gap: 16px;
+}
+
+/* Mobile carousel behavior */
+.top-formations__cards--mobile .top-formations__cards-track {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.top-formations__cards--mobile .top-formations__card-wrapper {
+  scroll-snap-align: start;
+  min-width: 75%;
+  flex: 0 0 auto;
 }
 
 .top-formations__cards--mobile .top-formations__card-wrapper {
