@@ -32,7 +32,7 @@ function Hero() {
 
         <div className="hero__buttons">
           <Button className="hero__btn-primary">Choisir votre formation</Button>
-          <Button className="hero__btn-secondary" onClick={() => setShowModal(true)}>
+          <Button className="hero__btn-secondary" onClick={() => setShowModal(true)}  style={{ zIndex: 3 }}>
             Se laisser guider
           </Button>
         </div>

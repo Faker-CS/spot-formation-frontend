@@ -1,3 +1,121 @@
+.navbar__dropdown-menu {
+  z-index: 100010 !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 2px; /* tighten spacing so panels sit closer */
+}
+
+.navbar__dropdown-list-wrapper {
+  display: block;
+}
+
+.navbar__dropdown-inner {
+  display: flex;
+  gap: 0px; /* reduced gap between left and right panels */
+  align-items: stretch;
+}
+
+.navbar__dropdown-left {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 320px;
+  box-shadow: 0 12px 30px rgba(10,37,78,0.06);
+}
+
+.navbar__dropdown-left.has-connector {
+  /* remove right-side rounding so selected item can visually connect */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: visible;
+}
+
+.navbar__dropdown-left-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  color: #1b365e;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  position: relative; /* allow extension pseudo-element */
+}
+
+.navbar__dropdown-left-item.is-active {
+  background: #c7f8ff; /* match right panel color when selected */
+  color: #1b365e;
+  font-weight: 700;
+  border-radius: 32px 0 0 32px; /* no rounding on right side */
+  box-shadow: none;
+  outline: none;
+  /* extend selected background toward right to visually connect with subdropdown */
+  padding-right: 56px;
+  margin-right: -32px;
+}
+
+/* Visual extension that continues the active color to the right under the subdropdown */
+/* Remove per-item connector; use full-height connector on left panel when subdropdown is open */
+
+
+.navbar__dropdown-left-item:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar__dropdown-right {
+  background: #c7f8ff;
+  border-radius: 12px;
+  padding: 14px 16px; /* slightly reduced padding to bring content in */
+  min-width: 260px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2; /* sit above the left panel connector */
+}
+
+/* Full-height connector from left panel that visually continues the color to the right */
+.navbar__dropdown-left.has-connector::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -32px;
+  width: 64px;
+  height: 100%;
+  background: #c7f8ff;
+  border-radius: 0 18px 18px 0;
+  z-index: 1;
+}
+
+.navbar__dropdown-right-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.navbar__dropdown-right-item {
+  display: inline-block;
+  background: #ffffff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #1b365e;
+}
+
+.navbar__dropdown-right-item.is-selected,
+.navbar__dropdown-right-item:hover {
+  background: #123254;
+  color: #ffffff;
+}
+
+.navbar__dropdown-right-empty {
+  color: #1b365e;
+}
 @import "../../../../styles/variables.css";
 
 /* Barre Menu Header */
@@ -44,6 +162,7 @@
   flex: none;
   order: 1;
   flex-grow: 0;
+  z-index: 100001; /* Keep menu and children above page content */
 }
 
 /* Button MENU - Default */
@@ -88,7 +207,7 @@
 
 /* Active state (Nous rejoindre) */
 .navbar__menu-btn--active {
-  background: #1b515e;
+  background: #1b365e;
   border-radius: 24px;
   color: #ffffff;
 }
@@ -99,16 +218,35 @@
   color: #1b365e;
 }
 
-.navbar__menu-btn--highlight:active {
-  background: #1b365e;
-  border-radius: 16px;
-  color: #ffffff;
-}
-
-.navbar__menu-btn--highlight:focus {
+/* .navbar__menu-btn--highlight:active {
+  
   background: #d9d9d9;
   border: 1px solid #40bfde;
   border-radius: 16px;
+} */
+
+.navbar__menu-btn--highlight:focus {
+  background: #c7f8ff;
+  color: #1B365E;
+  font-weight: 700;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  
+  box-shadow: 0 2px 8px rgba(27,54,94,0.08);
+  position: relative;
+  z-index: 100001;
+}
+
+.navbar__menu-btn--highlight:focus::after {
+  content: '';
+  position: absolute;
+  bottom: -18px; 
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: #c7f8ff;
 }
 
 /* Secondary button (Enseigner chez nous) */

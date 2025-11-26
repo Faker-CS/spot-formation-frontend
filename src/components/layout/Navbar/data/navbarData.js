@@ -18,12 +18,44 @@ export const SUB_DRAWERS = {
     id: "formations",
     title: "Formations",
     items: [
-      { label: "Marketing et Digital", href: "#formations-marketing" },
-      { label: "Développement Commercial et Entrepreneuriat", href: "#formations-business" },
-      { label: "Réseaux Sociaux et Contenus", href: "#formations-social" },
-      { label: "Outils et Productivité", href: "#formations-outils" },
-      { label: "Développement Personnel et Leadership", href: "#formations-leadership" },
-      { label: "Accessibles aux personnes en situation d'handicap", href: "#formations-accessibles" },
+      {
+        label: "Marketing et Digital",
+        href: "#formations-marketing",
+        subItems: [
+          { label: "Marketing Digital", href: "#marketing-digital" },
+          { label: "Copywriting", href: "#copywriting" },
+          { label: "WordPress", href: "#wordpress" },
+          { label: "E-commerce", href: "#ecommerce" },
+          { label: "SEO", href: "#seo" },
+          { label: "Google Ads", href: "#google-ads" },
+          { label: "Social Ads", href: "#social-ads" },
+        ],
+      },
+      {
+        label: "Développement Commercial et Entrepreneuriat",
+        href: "#formations-business",
+        subItems: [],
+      },
+      {
+        label: "Réseaux Sociaux et Contenus",
+        href: "#formations-social",
+        subItems: [],
+      },
+      {
+        label: "Outils et Productivité",
+        href: "#formations-outils",
+        subItems: [],
+      },
+      {
+        label: "Développement Personnel et Leadership",
+        href: "#formations-leadership",
+        subItems: [],
+      },
+      {
+        label: "Accessibles aux personnes en situation d'handicap",
+        href: "#formations-accessibles",
+        subItems: [],
+      },
     ],
     ctas: [
       {
