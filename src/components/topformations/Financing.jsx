@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import Card from "../common/card";
 import FinancingCard from "../common/FinancingCard/FinancingCard";
 import mockFinancing from "../../data/mockFinancing";
@@ -13,23 +13,39 @@ export default function Financing({
   handleBookmark,
   handleDiscover,
 }) {
-  
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const [financingIndex, setFinancingIndex] = useState(0);
   const [touchStartF, setTouchStartF] = useState(0);
   const [touchEndF, setTouchEndF] = useState(0);
-  const finTrackRef = useRef(null);
 
-  useEffect(() => {
-    if (!finTrackRef.current) return;
-    const track = finTrackRef.current;
-    const card = track.querySelector('.top-formations__card-wrapper');
-    const gapStyle = getComputedStyle(track).gap || '16px';
-    const gap = parseInt(gapStyle, 10) || 16;
-    const cardWidth = card ? card.offsetWidth + gap : 0;
-    track.scrollTo({ left: financingIndex * cardWidth, behavior: 'smooth' });
-  }, [financingIndex]);
+  const visibleFormations = formations.slice(currentIndex, currentIndex + 4);
 
-  
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && currentIndex < formations.length - 1) {
+      handleNext();
+    }
+    if (isRightSwipe && currentIndex > 0) {
+      handlePrev();
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   const handleTouchStartFin = (e) => {
     setTouchStartF(e.targetTouches[0].clientX);
@@ -57,7 +73,16 @@ export default function Financing({
     setTouchEndF(0);
   };
 
-  
+  const handleCardClick = (index) => {
+    const actualIndex = formations.findIndex(
+      (f) => f.id === formations[index]?.id
+    );
+    if (actualIndex > currentIndex) {
+      handleNext();
+    } else if (actualIndex < currentIndex) {
+      handlePrev();
+    }
+  };
 
   return (
     <>
@@ -104,13 +129,17 @@ export default function Financing({
             onTouchMove={handleTouchMoveFin}
             onTouchEnd={handleTouchEndFin}
           >
-              <div className="top-formations__cards-track" ref={finTrackRef}>
+              <div className="top-formations__cards-track">
                 {mockFinancing.map((f, index) => (
                   <div
                     key={f.id}
                     className={`top-formations__card-wrapper ${
                       index === financingIndex ? "active" : ""
                     }`}
+                    style={{
+                      transform: `translateX(-${financingIndex * 100}%)`,
+                      transition: "transform 0.3s ease-in-out",
+                    }}
                   >
                     <FinancingCard item={f} />
                   </div>

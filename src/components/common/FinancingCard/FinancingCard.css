@@ -122,4 +122,11 @@
     height: auto;
     max-width: 100%;
   }
+  .top-formations__financing-grid {
+    display: none !important;
+  }
+  
+  .top-formations__nav-arrows--financing {
+    display: none !important;
+  }
 }

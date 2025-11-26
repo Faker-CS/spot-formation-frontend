@@ -158,25 +158,11 @@
 
 @media (max-width: 768px) {
   /* Mobile: stack vertically */
-  /* hide desktop grid on mobile - we'll use the mobile carousel */
   .top-formations__financing-grid {
-    display: none !important;
-  }
-
-  /* hide financing-row arrows on mobile */
-  .top-formations__nav-arrows--financing {
-    display: none !important;
-  }
-}
-
-@media (min-width: 769px) {
-  /* ensure financing grid shows on desktop */
-  .top-formations__financing-grid {
-    display: flex !important;
-  }
-  /* hide mobile carousel on desktop */
-  .top-formations__cards--mobile {
-    display: none !important;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
   }
 }
 
@@ -456,19 +442,6 @@
   width: 100%;
   position: relative;
   gap: 16px;
-}
-
-/* Mobile carousel behavior */
-.top-formations__cards--mobile .top-formations__cards-track {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-}
-
-.top-formations__cards--mobile .top-formations__card-wrapper {
-  scroll-snap-align: start;
-  min-width: 75%;
-  flex: 0 0 auto;
 }
 
 .top-formations__cards--mobile .top-formations__card-wrapper {
