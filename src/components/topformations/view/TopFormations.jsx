@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./topformations.css";
+import "../styles/topformations.css";
 import { mockFormations } from "../../../data/mockTopFormations";
-import BestRated from "../BestRated";
-import MostRequested from "../MostRequested";
-import Financing from "../Financing";
+import BestRated from "./BestRated";
+import MostRequested from "./MostRequested";
+import Financing from "./Financing";
 
 export default function TopFormations() {
   const [activeTab, setActiveTab] = useState("mieux-notees");

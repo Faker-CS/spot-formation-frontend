@@ -1,0 +1,113 @@
+/* Cards, card wrapper, ranks, stars, and navigation buttons */
+.top-formations__cards-section {
+  position: relative;
+  width: 100%;
+}
+
+.top-formations__nav-arrows {
+  position: absolute;
+  top: 65px;
+  right: -60px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.top-formations__cards-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+}
+
+.top-formations__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
+  padding: 3rem 0 1.25rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top-formations__action-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
+  margin: 25px auto 0;
+  justify-content: center;
+}
+
+.top-formations__card-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-formations__rank {
+  font-family: 'Red Hat Display', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(2rem, 6vw, 5.25rem);
+  line-height: 1;
+  color: #1B365E;
+  text-align: center;
+}
+
+.top-formations__rank--blue {
+  color: #40BFDE;
+}
+
+.top-formations__stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1D1D1D;
+}
+
+.top-formations__stars img {
+  width: 16px;
+  height: 16px;
+}
+
+.top-formations__nav-btn {
+  width: 35px;
+  height: 75px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.top-formations__nav-btn:hover {
+  opacity: 0.7;
+}
+
+.top-formations__nav-btn:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
+}
+
+.top-formations__nav-btn img {
+  width: 40px;
+  height: 80px;
+  object-fit: contain;
+}

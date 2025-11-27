@@ -1,0 +1,9 @@
+/* Split partials. This file imports logical partials created to improve maintainability. */
+@import "./topformations.variables.css";
+@import "./topformations.layout.css";
+@import "./topformations.tabs.css";
+@import "./topformations.financing.css";
+@import "./topformations.cards.css";
+@import "./topformations.carousel.css";
+@import "./topformations.responsive.css";
+
