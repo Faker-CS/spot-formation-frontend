@@ -365,6 +365,7 @@
   background: #ffe4b4;
   background-image: linear-gradient(#ffe4b4, #ffe4b4),
     linear-gradient(180deg, #ffbc41 26%, #ff5758 100%);
+  outline: none;
 }
 
 .navbar__account-btn:active {
@@ -374,6 +375,29 @@
 
 .navbar__account-btn:active path {
   stroke: #ffffff;
+}
+
+/* When the login dropdown is open, style the account button to appear connected to the dropdown */
+.navbar__account-btn.is-open {
+  background: #ffe4b4;
+  font-weight: 800;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
+  z-index: 100001;
+  outline: none;
+}
+
+.navbar__account-btn.is-open::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: #ffe4b4;
 }
 
 /* Icon MonCompte */
